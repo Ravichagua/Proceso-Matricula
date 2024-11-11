@@ -20,6 +20,7 @@ public class ProcesosDocente {
            mt.addRow(aux.doc.Registro(num));
            aux=aux.sig;
        }//fin while
+       
     }//fin mostrar
     
     public static Docente LeerDocente(DocenteVista dv){
