@@ -29,12 +29,13 @@ public class ProcesosEstudiante {
    }//fin leer
    
    public static void MostrarEst(EstudianteVista EV,ListaEstudiantes lista){
-       String titulos[]={"nombre","apellido","grado","dni","edad"}; 
+       String titulos[]={"dni","nombre","apellido","edad","grado"}; 
        DefaultTableModel mt = new DefaultTableModel(null,titulos);
        EV.tblDatos.setModel(mt);
        for(int i=0;i<lista.Cantidad();i++){
            mt.addRow(lista.Recuperar(i).Registro());
        }
+       EV.btnEliminar.setEnabled(false);
    }//fin mostrarest    mt.addRow(lista.Recuperar(i).Registro(i+1));
    
    public static Estudiante LeerEstudiante(EstudianteVista EV){

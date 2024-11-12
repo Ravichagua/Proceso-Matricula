@@ -27,7 +27,9 @@ public class ControladorEstudiante implements ActionListener{
         ProcesosEstudiante.Presentacion(vista);        
         Lista =  new ListaEstudiantes();
         Lista = PersistenciaEstudiante.RecuperarEstudiantes();
-        ProcesosEstudiante.MostrarEst(vista, Lista);        
+        ProcesosEstudiante.MostrarEst(vista, Lista);
+
+        vista.btnEliminar.setEnabled(false);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -58,6 +60,7 @@ public class ControladorEstudiante implements ActionListener{
                    case "SI": vista.cbxDiscapacidad.setSelectedIndex(0); break;
                    case "NO": vista.cbxDiscapacidad.setSelectedIndex(1); break;
                }*/
+               vista.btnEliminar.setEnabled(true);
            }
        }//fin consultar
 //       if(e.getSource() == vista.btnActualizar){

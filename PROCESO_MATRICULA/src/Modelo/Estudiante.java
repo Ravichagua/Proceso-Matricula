@@ -23,7 +23,7 @@ public class Estudiante implements Serializable {
     }*/
 
     public Object[] Registro(){
-       Object[] fila={nombre,apellido,edad,dni,grado};
+       Object[] fila={dni,nombre,apellido,edad,grado};
        return fila;
    }
     
