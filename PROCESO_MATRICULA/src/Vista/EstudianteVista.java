@@ -48,6 +48,7 @@ public class EstudianteVista extends javax.swing.JFrame {
         btnOrdenar = new javax.swing.JButton();
         cbxGrado = new javax.swing.JComboBox();
         txtDni = new javax.swing.JTextField();
+        btnOrdenar2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,7 +82,12 @@ public class EstudianteVista extends javax.swing.JFrame {
 
         spnEdad.setBorder(javax.swing.BorderFactory.createTitledBorder("edad"));
 
-        btnOrdenar.setText("Ordenar Nom");
+        btnOrdenar.setText("Ordenar1");
+        btnOrdenar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrdenarActionPerformed(evt);
+            }
+        });
 
         cbxGrado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "INICIAL", "PRIMARIA", "SECUNDARIA" }));
         cbxGrado.setBorder(javax.swing.BorderFactory.createTitledBorder("grado"));
@@ -92,6 +98,8 @@ public class EstudianteVista extends javax.swing.JFrame {
         });
 
         txtDni.setBorder(javax.swing.BorderFactory.createTitledBorder("dni"));
+
+        btnOrdenar2.setText("Ordenar2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,9 +114,10 @@ public class EstudianteVista extends javax.swing.JFrame {
                     .addComponent(spnEdad, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnOrdenar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtDni, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDni, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                    .addComponent(btnOrdenar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnOrdenar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
                 .addGap(21, 21, 21))
@@ -119,7 +128,7 @@ public class EstudianteVista extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(txtDni, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -137,10 +146,11 @@ public class EstudianteVista extends javax.swing.JFrame {
                         .addComponent(btnEliminar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnOrdenar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnBuscar)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(47, 47, 47))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                        .addComponent(btnOrdenar2)))
+                .addGap(18, 18, 18)
+                .addComponent(btnBuscar)
+                .addGap(19, 19, 19))
         );
 
         pack();
@@ -153,6 +163,10 @@ public class EstudianteVista extends javax.swing.JFrame {
     private void cbxGradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxGradoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxGradoActionPerformed
+
+    private void btnOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnOrdenarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,6 +271,7 @@ public class EstudianteVista extends javax.swing.JFrame {
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnGuardar;
     public javax.swing.JButton btnOrdenar;
+    public javax.swing.JButton btnOrdenar2;
     public javax.swing.JComboBox cbxGrado;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JSpinner spnEdad;

@@ -52,7 +52,7 @@ public class ArbolHorario implements Serializable {
     }
     //metodo que busca un nodo en el arbol nombre completo
     public NodoHorario BuscarPorHora(String dato){
-        System.out.println("this got triggered");
+
         
         NodoHorario aux=Raiz;
         

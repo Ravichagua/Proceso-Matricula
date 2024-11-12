@@ -25,7 +25,9 @@ public class ControladorEstudiante implements ActionListener{
         vista.btnGuardar.addActionListener(this);
         vista.btnBuscar.addActionListener(this);
         vista.btnOrdenar.addActionListener(this);
+        vista.btnOrdenar2.addActionListener(this);
         vista.btnEliminar.addActionListener(this);
+        
         
         ProcesosEstudiante.Presentacion(vista);        
         Lista =  new ListaEnlazada();
@@ -76,10 +78,17 @@ public class ControladorEstudiante implements ActionListener{
                ProcesosEstudiante.MostrarEst(vista, Lista); 
            }
        }     
-       if(e.getSource()== vista.btnOrdenar){
+       if(e.getSource()== vista.btnOrdenar2){//chnged
            
             ListaEnlazada copia =Lista;
             OrdenarListasEnlazadas.PorEdad(copia);
+            ProcesosEstudiante.MostrarEst(vista,copia);
+          
+       }
+       if(e.getSource()== vista.btnOrdenar){
+           
+            ListaEnlazada copia =Lista;
+            OrdenarListasEnlazadas.PorNombres(copia);
             ProcesosEstudiante.MostrarEst(vista,copia);
           
        }
