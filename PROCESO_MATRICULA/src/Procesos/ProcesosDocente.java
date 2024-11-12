@@ -9,7 +9,7 @@ import Modelo.Docente;
 
 public class ProcesosDocente {
     
-    public static void MostrarDocentes(DocenteVista dv,ListaDoble lista){
+    public static void MostrarDocentes(DocenteVista dv,ListaEnlazadaDoble lista){
        String titulos[]={"Num","Nombre","Apellido","Asignatura","Codigo"};
        DefaultTableModel mt  = new DefaultTableModel(null,titulos);
        dv.tblDatos.setModel(mt);

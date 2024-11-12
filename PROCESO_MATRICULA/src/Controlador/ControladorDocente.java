@@ -11,13 +11,13 @@ import Estructura.ListaDoble.*;
 import Ordenamientos.*;
 public class ControladorDocente  implements ActionListener {
     DocenteVista vista;
-    ListaDoble lista;
+    ListaEnlazadaDoble lista;
     
     Nodo encontrado;
     
     public ControladorDocente(DocenteVista fd){
         vista=fd;
-        lista = new ListaDoble();
+        lista = new ListaEnlazadaDoble();
         vista.btnGuardar.addActionListener(this);
         vista.btnBuscar.addActionListener(this);
         vista.btnEliminar.addActionListener(this);
@@ -75,7 +75,7 @@ public class ControladorDocente  implements ActionListener {
           
           System.out.println("this got triggered");
           
-          ListaDoble copia = lista;
+          ListaEnlazadaDoble copia = lista;
           copia = OrdenarListasDobles.PorNombre(copia);
           ProcesosDocente.MostrarDocentes(vista,copia);
           

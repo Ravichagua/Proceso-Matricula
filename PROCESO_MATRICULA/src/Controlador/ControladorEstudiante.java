@@ -8,13 +8,17 @@ import Procesos.ProcesosEstudiante;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Persistencia.PersistenciaEstudiante;
+import Estructura.ListaEnlazada.ListaEnlazada;
+import Estructura.ListaEnlazada.Nodo;
+import Ordenamientos.OrdenarListasEnlazadas;
 
 public class ControladorEstudiante implements ActionListener{
     EstudianteVista vista;
     Estudiante est;
-    ListaEstudiantes Lista;
+    ListaEnlazada Lista;
     
-    int pos;
+    //int pos;
+    Nodo pos;
     public ControladorEstudiante(EstudianteVista EV){
         vista=EV;
         // !!!!!!!!!!!!!!!!!!!!!!!!!!!falta boton actualizar!!!!!!!!!!!!!!!!!!!!!!
@@ -25,7 +29,7 @@ public class ControladorEstudiante implements ActionListener{
         vista.btnEliminar.addActionListener(this);
         
         ProcesosEstudiante.Presentacion(vista);        
-        Lista =  new ListaEstudiantes();
+        Lista =  new ListaEnlazada();
         Lista = PersistenciaEstudiante.RecuperarEstudiantes();
         ProcesosEstudiante.MostrarEst(vista, Lista);
 
@@ -35,18 +39,21 @@ public class ControladorEstudiante implements ActionListener{
     public void actionPerformed(ActionEvent e) {
        if(e.getSource() == vista.btnGuardar){
            est = ProcesosEstudiante.LeerEstudiante(vista);
-           Lista.Agregar(est);
+           //Lista.Agregar(est);
+           Lista.AgregarAlInicio(est);
            PersistenciaEstudiante.GuardarEstudiante(Lista);
            ProcesosEstudiante.LimpiarEntradas(vista);
            ProcesosEstudiante.MostrarEst(vista, Lista); 
        }
        if(e.getSource() == vista.btnBuscar){
            String dnibus = Mensajes.LeerTexto("Ingrese dni a buscar");
-           pos = Lista.Buscar(dnibus);
-           if(pos==-1){
+           pos = Lista.BuscarPorDni(dnibus);
+           if(pos==null){
                Mensajes.Mostrar("DNI "+dnibus+" no existe en la lista..");
            }else{
-               est = Lista.Recuperar(pos);
+               //est = Lista.Recuperar(pos);
+               est=pos.est;
+               
                vista.txtDni.setText(est.getDni());
                vista.txtNombre.setText(est.getNombre());
                vista.spnEdad.setValue(est.getEdad());
@@ -74,12 +81,22 @@ public class ControladorEstudiante implements ActionListener{
            int respuesta = Mensajes.Confirmar("Confirmar!!!",
                                           "Desea eliminar el registro?");
            if(respuesta==0){
-               Lista.Eliminar(pos);
+               Lista.EliminarEstudiante(pos);
                PersistenciaEstudiante.GuardarEstudiante(Lista);
                ProcesosEstudiante.LimpiarEntradas(vista);
                ProcesosEstudiante.MostrarEst(vista, Lista); 
            }
        }//fin eliminar       
+//       if(e.getSource()== vista.btnOrdenar){
+//          
+//          System.out.println("this got triggered");
+//          
+//          ListaEstudiantes copia = Lista;
+//          copia = OrdenarListasEnlazadas.PorNombre(copia);
+//          ProcesosEstudiante.MostrarEst(vista,copia);
+          
+          
+       }//fin ordenar
     }//fin action   
     
-}
+

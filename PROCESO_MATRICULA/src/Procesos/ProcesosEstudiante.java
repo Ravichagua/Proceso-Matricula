@@ -1,5 +1,7 @@
 package Procesos;
 
+import Estructura.ListaEnlazada.ListaEnlazada;
+import Estructura.ListaEnlazada.Nodo;
 import Modelo.Estudiante;
 import javax.swing.table.DefaultTableModel;
 import Vista.EstudianteVista;
@@ -28,13 +30,23 @@ public class ProcesosEstudiante {
        EV.txtDni.setText("");;
    }//fin leer
    
-   public static void MostrarEst(EstudianteVista EV,ListaEstudiantes lista){
+   public static void MostrarEst(EstudianteVista EV,ListaEnlazada lista){
        String titulos[]={"dni","nombre","apellido","edad","grado"}; 
        DefaultTableModel mt = new DefaultTableModel(null,titulos);
        EV.tblDatos.setModel(mt);
-       for(int i=0;i<lista.Cantidad();i++){
-           mt.addRow(lista.Recuperar(i).Registro());
+//       for(int i=0;i<lista.Cantidad();i++){
+//           mt.addRow(lista.Recuperar(i).Registro());
+//       }
+       Nodo aux=lista.ini;
+       int num=0;
+       while(aux!=null){
+           num++;
+           mt.addRow(aux.est.Registro());
+           aux=aux.sig;
        }
+       
+       
+       
        EV.btnEliminar.setEnabled(false);
    }//fin mostrarest    mt.addRow(lista.Recuperar(i).Registro(i+1));
    

@@ -14,7 +14,10 @@ public class ListaEnlazada implements Serializable{
         ini = fin = null;
     }
     //metodo que agrega un objeto al inicio de la lista
-    public void AgregarAlInicio(Nodo nuevo){
+    public void AgregarAlInicio(Estudiante est){
+        
+        Nodo nuevo=new Nodo(est);
+        
         if(ini==null && fin==null){
             ini=fin=nuevo; 
         }else{
@@ -34,7 +37,7 @@ public class ListaEnlazada implements Serializable{
     }
     
     //Metodo que busca un estudiante por medio de su DNI
-    /*public Nodo BuscarPorDni(String dnibuscado){
+    public Nodo BuscarPorDni(String dnibuscado){
         Nodo aux=ini;
         while(aux!=null){
             if(dnibuscado.equals(aux.est.getDni())){
@@ -43,8 +46,10 @@ public class ListaEnlazada implements Serializable{
             aux= aux.sig;
         }
         return null;
-    }*/
+    }
 
+    
+    
     //metodo que muestra en un TextArea la cantidad de estudiantes por
     //cada nivel
    /* public void MostrarResumen(JTextArea txa){       

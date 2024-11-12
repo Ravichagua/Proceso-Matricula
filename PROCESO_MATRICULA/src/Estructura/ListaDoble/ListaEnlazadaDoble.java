@@ -1,11 +1,11 @@
 package Estructura.ListaDoble;
 import Modelo.*;
 import java.io.*;
-public class ListaDoble implements Serializable {
+public class ListaEnlazadaDoble implements Serializable {
     public Nodo ini;
     public Nodo fin;
     
-    public ListaDoble(){
+    public ListaEnlazadaDoble(){
         
         ini=fin=null;
     }//fin de constructor

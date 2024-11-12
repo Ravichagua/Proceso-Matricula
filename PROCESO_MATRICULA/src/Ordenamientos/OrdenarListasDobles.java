@@ -4,7 +4,7 @@ import Estructura.ListaDoble.*;
 import Modelo.*;
 public class OrdenarListasDobles {
     //algoritmo de ordenamiento por Inserción en listas doble
-    public static ListaDoble PorNombre(ListaDoble lista){
+    public static ListaEnlazadaDoble PorNombre(ListaEnlazadaDoble lista){
         for(Nodo i=lista.ini.sig; i!=null;i=i.sig){
            Docente value=i.doc;
            Nodo j=i;

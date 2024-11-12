@@ -3,7 +3,7 @@ package Ordenamientos;
 import Estructura.ListaEnlazada.Nodo;
 import Estructura.ListaEnlazada.ListaEnlazada;
 import Modelo.*;
-public class OrdenarListas {    
+public class OrdenarListasEnlazadas {    
     public static ListaEnlazada PorNombres(ListaEnlazada a){
         Nodo k;
         for(Nodo i=a.ini;i!=null;i=i.sig){
@@ -19,5 +19,8 @@ public class OrdenarListas {
         }
         return a;
     }//fin metodo
-    
+    public static ListaEnlazada Edad(ListaEnlazada a){
+        
+        return a;
+    }
 }//fin de clase

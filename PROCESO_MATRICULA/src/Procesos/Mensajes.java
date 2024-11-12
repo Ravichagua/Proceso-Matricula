@@ -10,6 +10,10 @@ public class Mensajes {
     public static String LeerTexto(String msj){
         return JOptionPane.showInputDialog(msj);
     }
+    public static int LeerNumeros(String msj){
+        return Integer.parseInt(JOptionPane.showInputDialog(msj));
+    }
+    
     public static int Confirmar(String titulo,String msj){
         return JOptionPane.showConfirmDialog(null,
                 msj, 
