@@ -14,7 +14,7 @@ public class Docente implements Serializable {
         
         Object[] fila={num,nombre,apellido,asignatura,codigo};
         return fila;
-    }//fin registro
+    }
     
     public Docente(){}
 

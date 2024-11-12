@@ -10,17 +10,6 @@ public class ProcesosHorario {
       f.txtSalon.setText(actual.getElemento().getSalonId());
     }
 
-//    public static void Estado_Botones(boolean Estado,HorarioVista f){
-//        f.txtApellidos.setEnabled(Estado);
-//        f.txtNombres.setEnabled(Estado);
-//        f.txtTelefono.setEnabled(Estado);
-//        f.btnNuevo.setEnabled(!Estado);
-//        f.btnAgregar.setEnabled(Estado);
-//        f.btnCancelar.setEnabled(Estado);
-//        f.btnBuscar.setEnabled(!Estado);
-//        f.btnEliminar.setEnabled(!Estado);
-//        f.tblDatos.setEnabled(!Estado);                
-//    }
     
    public static void LimpiarEntradas(HorarioVista f){
        f.txtHoraInicio.setText("");
@@ -35,4 +24,4 @@ public class ProcesosHorario {
    
    
    
-}//fin de la clase
+}

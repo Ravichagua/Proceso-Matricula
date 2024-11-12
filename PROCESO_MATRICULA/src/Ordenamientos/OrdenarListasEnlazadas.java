@@ -18,7 +18,7 @@ public class OrdenarListasEnlazadas {
             k.est = aux;
         }
         return a;
-    }//fin metodo
+    }
     public static ListaEnlazada PorEdad(ListaEnlazada a){
  
          boolean swapped;
@@ -53,5 +53,4 @@ public class OrdenarListasEnlazadas {
     return a;
 }
     
-    }
-//fin de clase
+}

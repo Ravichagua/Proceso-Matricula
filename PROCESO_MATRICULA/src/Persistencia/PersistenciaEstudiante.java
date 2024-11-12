@@ -21,7 +21,7 @@ public class PersistenciaEstudiante {
        }catch(Exception ex){
            Mensajes.LeerTexto("ERROR no se puede guardar "+ex);
        }       
-    }// fin guardar
+    }
     
     public static ListaEnlazada RecuperarEstudiantes(){
         ListaEnlazada Lista=new ListaEnlazada();

@@ -19,9 +19,9 @@ public class ProcesosDocente {
            num++;
            mt.addRow(aux.doc.Registro(num));
            aux=aux.sig;
-       }//fin while
+       }
        
-    }//fin mostrar
+    }
     
     public static Docente LeerDocente(DocenteVista dv){
         Docente doc =  new Docente();
@@ -33,14 +33,14 @@ public class ProcesosDocente {
 
         
         return doc;
-    }//fin leer    
+    } 
     public static void LimpiarEntradas(DocenteVista dv){
         dv.txtCodigo.setText("");
         dv.txtNombre.setText("");
         dv.txtApellido.setText("");
         dv.txtAsignatura.setText("");
-        //fd.txtCodigo.requestFocus();
-    }//fin limpiar
+        
+    }
     
     public static void Presentacion(DocenteVista dv){
        dv.setTitle("Registro de Docentes");

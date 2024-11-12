@@ -10,5 +10,5 @@ public class NodoDoble implements Serializable {
     public NodoDoble(Docente d){
         this.doc=d;
         ant=sig=null;
-    }//fin constructor    
-}//fin de la clase
+    }  
+}

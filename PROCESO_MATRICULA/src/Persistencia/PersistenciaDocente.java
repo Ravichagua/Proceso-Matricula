@@ -21,7 +21,7 @@ public class PersistenciaDocente {
        }catch(Exception ex){
            Mensajes.LeerTexto("ERROR no se puede guardar "+ex);
        }       
-    }// fin guardar
+    }
     
     public static ListaEnlazadaDoble Recuperar(){
         ListaEnlazadaDoble Lista=new ListaEnlazadaDoble();
@@ -34,5 +34,5 @@ public class PersistenciaDocente {
            Mensajes.Mostrar("ERROR no se puede recuperar..."+ex);
        }
        return Lista;
-    }//fin recuperar   
+    } 
 }

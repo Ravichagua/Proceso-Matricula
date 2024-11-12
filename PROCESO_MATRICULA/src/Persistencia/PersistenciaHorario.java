@@ -1,7 +1,7 @@
 package Persistencia;
 import java.io.*;
 import javax.swing.JOptionPane;
-import Estructura.*;
+
 import Estructura.ArbolBinario.ArbolHora;
 public class PersistenciaHorario {
     public static void GuardarEnArchivo(ArbolHora arbol){
@@ -14,7 +14,7 @@ public class PersistenciaHorario {
             JOptionPane.showMessageDialog(null,
                "ERROR no se puede guardar en archivo "+ex);
         }
-    }//fin guardar
+    }
     public static ArbolHora RecuperarDeArchivo(){
       ArbolHora arbol = new ArbolHora();  
         try{
@@ -27,5 +27,5 @@ public class PersistenciaHorario {
                "ERROR no se puede recuperar de archivo"+ex);
         }
         return arbol;
-    }//fin recuperar
-}//fin class
+    }
+}

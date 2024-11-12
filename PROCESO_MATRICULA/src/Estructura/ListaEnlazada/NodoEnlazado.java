@@ -14,6 +14,6 @@ public class NodoEnlazado implements Serializable{
         sig=null;
     
     
-    }//fin constructor    
-}//fin de la clase
+    }   
+}
 

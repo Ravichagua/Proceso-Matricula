@@ -11,11 +11,11 @@ public class OrdenarListasDobles {
            while(j!=lista.ini && j.ant.doc.getNombre().compareTo(value.getNombre())>0){
                j.doc = j.ant.doc;
                j=j.ant;
-           }//fin while
+           }
            j.doc = value;
            
            
         }
         return lista;
-    }//fin ordenar
-}//fin de la clase
+    }
+}

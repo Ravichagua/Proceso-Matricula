@@ -5,7 +5,6 @@ import java.io.Serializable;
 
 public class Estudiante implements Serializable {
 
-    //private int id;
     private String nombre;
     private String apellido;
     private int edad;
@@ -13,14 +12,7 @@ public class Estudiante implements Serializable {
     private String dni;
     
     public Estudiante(){}
-    /*
-    public Estudiante(int id, String nombre, String apellido, int edad, String grado) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.edad = edad;
-        this.grado = grado;
-    }*/
+
 
     public Object[] Registro(){
        Object[] fila={dni,nombre,apellido,edad,grado};

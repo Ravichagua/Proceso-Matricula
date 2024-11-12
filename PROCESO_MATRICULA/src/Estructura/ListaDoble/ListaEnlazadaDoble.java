@@ -8,7 +8,7 @@ public class ListaEnlazadaDoble implements Serializable {
     public ListaEnlazadaDoble(){
         
         ini=fin=null;
-    }//fin de constructor
+    }
     //metodo que inserta un nodo al final de la lista
     public void InsertarAlFinal(Docente doc){
        NodoDoble nuevo =  new NodoDoble(doc);
@@ -20,7 +20,7 @@ public class ListaEnlazadaDoble implements Serializable {
        }
        fin=nuevo;
        fin.sig=null;               
-    }//fin insertar
+    }
     //metodo que busca un nodo por el codigo de docente
     public NodoDoble BuscarPorCodigo(String codigo){
         NodoDoble encontrado=ini;
@@ -30,7 +30,7 @@ public class ListaEnlazadaDoble implements Serializable {
             encontrado=encontrado.sig;
         }
         return null;
-    }//fin buscar
+    }
     //metodo que elimina un nodo
     public void EliminarNodo(NodoDoble actual){
       if(actual!=null){
@@ -44,6 +44,6 @@ public class ListaEnlazadaDoble implements Serializable {
               actual.ant.sig=null;
               fin=actual.ant;
           }
-      }//fin if
-    }//fin eliminar
-}//fin de la clase
+      }
+    }
+}

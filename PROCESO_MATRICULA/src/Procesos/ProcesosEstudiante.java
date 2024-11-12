@@ -25,7 +25,7 @@ public class ProcesosEstudiante {
        EV.txtApellido.setText("");
        EV.cbxGrado.setSelectedIndex(0);
        EV.txtDni.setText("");;
-   }//fin leer
+   }
    
    public static void MostrarEst(EstudianteVista EV,ListaEnlazada lista){
        String titulos[]={"dni","nombre","apellido","edad","grado"}; 
@@ -43,7 +43,7 @@ public class ProcesosEstudiante {
        
        
        EV.btnEliminar.setEnabled(false);
-   }//fin mostrarest    mt.addRow(lista.Recuperar(i).Registro(i+1));
+   }
    
    public static Estudiante LeerEstudiante(EstudianteVista EV){
        Estudiante e =  new Estudiante();

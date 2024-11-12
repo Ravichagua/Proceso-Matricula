@@ -63,20 +63,14 @@ public class ListaEnlazada implements Serializable{
             }else{
                 anterior.sig=actual.sig;
             }
-        }//fin if
-    }//fin metodo
+        }
+    }
            
     //metodo que actualiza el estudiantes de un nodo
     public void ActualizarEst(NodoEnlazado actual,Estudiante nuevoest){
         actual.est = nuevoest;
     }
-//    public ListaEnlazada clonar() {
-//        ListaEnlazada copia = new ListaEnlazada();
-//        if (this.ini == null) {
-//            return copia; // Si la lista está vacía, se retorna una lista vacía
-//        }
-//        return copia;
-//    }
+
     
     
     
@@ -104,4 +98,4 @@ public class ListaEnlazada implements Serializable{
     public void setCtotal(int ctotal) {
         this.ctotal = ctotal;
     }
-}//fin de la clase
+}

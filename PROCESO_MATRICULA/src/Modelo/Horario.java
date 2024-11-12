@@ -4,10 +4,8 @@ import java.io.Serializable;
 
 
 public class Horario implements Serializable{
-    //private int id;
-   // private String dia;
+
     private String horaInicio;
-    //private String horaFin;
     private String curso;
     private String salonId;
 
@@ -19,7 +17,6 @@ public class Horario implements Serializable{
     
     public Object[] getRegistro(){
       Object[] fila={horaInicio,curso,salonId};
-       //Object[] fila={"horaInicio","curso","salonId"};
        return fila;
    }
     
