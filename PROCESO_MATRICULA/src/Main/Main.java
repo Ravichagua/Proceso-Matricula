@@ -1,12 +1,22 @@
 package Main;
-import Controlador.ControladorDocente;
+
 import Vista.*;
+import Controlador.ControladorLogin;
+import Estructura.ArrayListCredenciales;
+
 public class Main {
 
     public static void main(String[] args) {
+        ArrayListCredenciales listaNueva=new ArrayListCredenciales();//nueva lista para credenciales
+        
+        listaNueva.annadirCredenciales("admin","admin");
+        listaNueva.annadirCredenciales("123","123");
+        listaNueva.annadirCredenciales("1","1");
+        
+        LoginVista instanciaVista=new LoginVista();
+        
 
-        MenuPrincipalVista InstanciaMenu = new MenuPrincipalVista();
-        InstanciaMenu.setVisible(true);
+        ControladorLogin ctrlStart=new ControladorLogin(instanciaVista,listaNueva);
         
     }
     

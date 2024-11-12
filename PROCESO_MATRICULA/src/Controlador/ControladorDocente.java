@@ -29,7 +29,7 @@ public class ControladorDocente  implements ActionListener {
         
         vista.btnEliminar.setEnabled(false);//boton eliminar desactivado
         
-    }//fin constructor
+    }
     private void ActualizarForma(){
         ProcesosDocente.LimpiarEntradas(vista);
         PersistenciaDocente.Guardar(lista);

@@ -1,10 +1,10 @@
 package Procesos;
-import Estructura.ArbolBinario.NodoHora;
+import Estructura.ArbolBinario.NodoHorario;
 import Vista.HorarioVista;
 import javax.swing.table.DefaultTableModel;
 public class ProcesosHorario {
     
-    public static void MostrarDatosNodo(NodoHora actual,HorarioVista f){
+    public static void MostrarDatosNodo(NodoHorario actual,HorarioVista f){
       f.txtHoraInicio.setText(actual.getElemento().getHoraInicio());
       f.txtCurso.setText(actual.getElemento().getCursoId());
       f.txtSalon.setText(actual.getElemento().getSalonId());

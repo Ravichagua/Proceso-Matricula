@@ -5,11 +5,11 @@ import javax.swing.table.DefaultTableModel;
 import Modelo.Horario;
 import java.time.LocalTime;
 
-public class ArbolHora implements Serializable {
+public class ArbolHorario implements Serializable {
     
-    private NodoHora Raiz;
+    private NodoHorario Raiz;
     
-    public ArbolHora(){
+    public ArbolHorario(){
         Raiz=null;
     }
     
@@ -17,13 +17,13 @@ public class ArbolHora implements Serializable {
     
     
     //metodo que agrega nodos al arbol
-    public NodoHora AgregarHorario(NodoHora nodo,Horario elem){
+    public NodoHorario AgregarHorario(NodoHorario nodo,Horario elem){
         
         
         
         
         if(nodo==null){
-            NodoHora nuevo =  new NodoHora(elem);
+            NodoHorario nuevo =  new NodoHorario(elem);
             return nuevo;
         }
         else{
@@ -41,7 +41,7 @@ public class ArbolHora implements Serializable {
         return nodo;
     }
     //metodo que muestra los datos enOrden (Izq - raiz - der)
-    public void MostrarEnOrden(NodoHora nodo,DefaultTableModel modelo){
+    public void MostrarEnOrden(NodoHorario nodo,DefaultTableModel modelo){
         //String titulos[]={"HoraIni","curso","salonId"};
        
         if(nodo!=null){
@@ -51,10 +51,10 @@ public class ArbolHora implements Serializable {
         }
     }
     //metodo que busca un nodo en el arbol nombre completo
-    public NodoHora BuscarPorHora(String dato){
+    public NodoHorario BuscarPorHora(String dato){
         System.out.println("this got triggered");
         
-        NodoHora aux=Raiz;
+        NodoHorario aux=Raiz;
         
         while(aux!=null){
             
@@ -79,11 +79,11 @@ public class ArbolHora implements Serializable {
 
     
     
-    public NodoHora getRaiz() {
+    public NodoHorario getRaiz() {
         return Raiz;
     }
 
-    public void setRaiz(NodoHora Raiz) {
+    public void setRaiz(NodoHorario Raiz) {
         this.Raiz = Raiz;
     }
 }//fin de la clase

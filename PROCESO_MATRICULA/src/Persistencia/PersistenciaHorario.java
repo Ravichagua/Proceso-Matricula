@@ -2,9 +2,9 @@ package Persistencia;
 import java.io.*;
 import javax.swing.JOptionPane;
 
-import Estructura.ArbolBinario.ArbolHora;
+import Estructura.ArbolBinario.ArbolHorario;
 public class PersistenciaHorario {
-    public static void GuardarEnArchivo(ArbolHora arbol){
+    public static void GuardarEnArchivo(ArbolHorario arbol){
         try{
            FileOutputStream fos = new FileOutputStream("ArchivoArbol.bin");
            ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -15,12 +15,12 @@ public class PersistenciaHorario {
                "ERROR no se puede guardar en archivo "+ex);
         }
     }
-    public static ArbolHora RecuperarDeArchivo(){
-      ArbolHora arbol = new ArbolHora();  
+    public static ArbolHorario RecuperarDeArchivo(){
+      ArbolHorario arbol = new ArbolHorario();  
         try{
            FileInputStream fis = new FileInputStream("ArchivoArbol.bin");
            ObjectInputStream ois = new ObjectInputStream(fis);
-           arbol = (ArbolHora)ois.readObject();
+           arbol = (ArbolHorario)ois.readObject();
            ois.close();
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null,

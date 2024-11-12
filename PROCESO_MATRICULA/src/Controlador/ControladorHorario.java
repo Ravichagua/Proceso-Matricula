@@ -1,8 +1,7 @@
 package Controlador;
-//librerias
-//import Estructura.*;
-import Estructura.ArbolBinario.ArbolHora;
-import Estructura.ArbolBinario.NodoHora;
+
+import Estructura.ArbolBinario.ArbolHorario;
+import Estructura.ArbolBinario.NodoHorario;
 import java.awt.event.*;
 import Vista.HorarioVista;
 import Modelo.*;
@@ -12,7 +11,7 @@ import javax.swing.JOptionPane;
 import Persistencia.*;
 public class ControladorHorario implements ActionListener {
      HorarioVista vista;
-     ArbolHora arbol;
+     ArbolHorario arbol;
      DefaultTableModel modTabla;
      
      public ControladorHorario(HorarioVista HV){
@@ -20,13 +19,12 @@ public class ControladorHorario implements ActionListener {
          vista.btnGuardar.addActionListener(this);
 
          vista.btnBuscar.addActionListener(this);
-         //vista.btnEliminar.addActionListener(this);
         
          vista.setLocationRelativeTo(null);
          vista.setVisible(true);
          
 
-         arbol = new ArbolHora();
+         arbol = new ArbolHorario();
          arbol = PersistenciaHorario.RecuperarDeArchivo();
          modTabla = (DefaultTableModel)vista.tblDatos.getModel();
          arbol.MostrarEnOrden(arbol.getRaiz(), modTabla);
@@ -54,11 +52,11 @@ public class ControladorHorario implements ActionListener {
         if(e.getSource() == vista.btnBuscar){
             String dato = JOptionPane.showInputDialog(
                                      "Ingrese la hora de la clase a buscar :  ");
-            NodoHora encontrado = arbol.BuscarPorHora(dato);
+            NodoHorario encontrado = arbol.BuscarPorHora(dato);
             if(encontrado==null)
                 JOptionPane.showMessageDialog(null,
                         dato+" no existe en el arbol..");
             else ProcesosHorario.MostrarDatosNodo(encontrado, vista);
         }
-    }//fin del action
-}//fin de la clase
+    }
+}
