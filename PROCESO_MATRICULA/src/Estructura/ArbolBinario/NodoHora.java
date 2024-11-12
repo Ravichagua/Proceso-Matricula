@@ -1,21 +1,21 @@
 package Estructura.ArbolBinario;
-import Modelo.Estudiante;
+import Modelo.Horario;
 import java.io.Serializable;
 public class NodoHora implements Serializable{
-    private Estudiante elemento;
+    private Horario elemento;
     private NodoHora Izq;
     private NodoHora Der;
     
-    public NodoHora(Estudiante elem){
+    public NodoHora(Horario elem){
         this.elemento=elem;
         Izq=Der=null;
     }
     //getter y settter
     
-    public Estudiante getElemento() {
+    public Horario getElemento() {
         return elemento;
     }
-    public void setElemento(Estudiante elemento) {
+    public void setElemento(Horario elemento) {
         this.elemento = elemento;
     }
     public NodoHora getIzq() {     return Izq;    }

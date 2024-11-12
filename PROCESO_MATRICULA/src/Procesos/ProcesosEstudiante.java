@@ -1,11 +1,11 @@
 package Procesos;
 
 import Estructura.ListaEnlazada.ListaEnlazada;
-import Estructura.ListaEnlazada.Nodo;
+import Estructura.ListaEnlazada.NodoEnlazado;
 import Modelo.Estudiante;
 import javax.swing.table.DefaultTableModel;
 import Vista.EstudianteVista;
-import Estructura.ListaEstudiantes;
+
 
 public class ProcesosEstudiante {
     public static void Presentacion(EstudianteVista fe){
@@ -15,10 +15,7 @@ public class ProcesosEstudiante {
        fe.cbxGrado.addItem("INICIAL");
        fe.cbxGrado.addItem("PRIMARIA");
        fe.cbxGrado.addItem("SECUNDARIA");
-       
-       /*fe.cbxDiscapacidad.removeAllItems();
-       fe.cbxDiscapacidad.addItem("SI");
-       fe.cbxDiscapacidad.addItem("NO");*/
+
    }
    
    public static void LimpiarEntradas(EstudianteVista EV){
@@ -34,10 +31,8 @@ public class ProcesosEstudiante {
        String titulos[]={"dni","nombre","apellido","edad","grado"}; 
        DefaultTableModel mt = new DefaultTableModel(null,titulos);
        EV.tblDatos.setModel(mt);
-//       for(int i=0;i<lista.Cantidad();i++){
-//           mt.addRow(lista.Recuperar(i).Registro());
-//       }
-       Nodo aux=lista.ini;
+
+       NodoEnlazado aux=lista.ini;
        int num=0;
        while(aux!=null){
            num++;
@@ -57,13 +52,7 @@ public class ProcesosEstudiante {
        e.setGrado((String)EV.cbxGrado.getSelectedItem());
        e.setEdad(Integer.parseInt(EV.spnEdad.getValue().toString()));
        e.setDni(EV.txtDni.getText());
-       /*
-       e.setDni(EV.txtDni.getText());
-       e.setNom(EV.txtNombres.getText());
-       e.setNivel(EV.cbxNivel.getSelectedItem().toString());
-       e.setEdad(Integer.parseInt(EV.txtEdad.getText()));
-       e.setDisc(EV.cbxDiscapacidad.getSelectedItem().toString());
-       e.ActualizarPension();*/
+ 
        return e;
    }
 }

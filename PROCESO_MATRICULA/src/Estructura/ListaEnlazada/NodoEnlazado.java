@@ -4,12 +4,12 @@ package Estructura.ListaEnlazada;
 import Modelo.Estudiante;
 import java.io.Serializable;
 
-public class Nodo implements Serializable{
+public class NodoEnlazado implements Serializable{
     
     public Estudiante est;
-    public Nodo sig;
+    public NodoEnlazado sig;
     
-    public Nodo(Estudiante e){
+    public NodoEnlazado(Estudiante e){
         est=e;
         sig=null;
     

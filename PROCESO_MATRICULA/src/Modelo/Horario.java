@@ -1,38 +1,28 @@
 package Modelo;
 
+import java.io.Serializable;
 
-public class Horario {
-    private int id;
-    private String dia;
+
+public class Horario implements Serializable{
+    //private int id;
+   // private String dia;
     private String horaInicio;
-    private String horaFin;
-    private int cursoId;
-    private int salonId;
+    //private String horaFin;
+    private String curso;
+    private String salonId;
 
-    public Horario(int id, String dia, String horaInicio, String horaFin, int cursoId, int salonId) {
-        this.id = id;
-        this.dia = dia;
-        this.horaInicio = horaInicio;
-        this.horaFin = horaFin;
-        this.cursoId = cursoId;
-        this.salonId = salonId;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getDia() {
-        return dia;
-    }
-
-    public void setDia(String dia) {
-        this.dia = dia;
-    }
+    public Horario(Object[] registro){
+       this.horaInicio=registro[0].toString();
+       this.curso =registro[1].toString();
+       this.salonId=registro[2].toString();
+   }
+    
+    public Object[] getRegistro(){
+      Object[] fila={horaInicio,curso,salonId};
+       //Object[] fila={"horaInicio","curso","salonId"};
+       return fila;
+   }
+    
 
     public String getHoraInicio() {
         return horaInicio;
@@ -42,27 +32,21 @@ public class Horario {
         this.horaInicio = horaInicio;
     }
 
-    public String getHoraFin() {
-        return horaFin;
+    
+
+    public String getCursoId() {
+        return curso;
     }
 
-    public void setHoraFin(String horaFin) {
-        this.horaFin = horaFin;
+    public void setCursoId(String cursoId) {
+        this.curso = cursoId;
     }
 
-    public int getCursoId() {
-        return cursoId;
-    }
-
-    public void setCursoId(int cursoId) {
-        this.cursoId = cursoId;
-    }
-
-    public int getSalonId() {
+    public String getSalonId() {
         return salonId;
     }
 
-    public void setSalonId(int salonId) {
+    public void setSalonId(String salonId) {
         this.salonId = salonId;
     }
 }

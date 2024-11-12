@@ -1,13 +1,13 @@
 package Estructura.ListaDoble;
 import java.io.*;
 import Modelo.*;
-public class Nodo implements Serializable {
+public class NodoDoble implements Serializable {
     
     public Docente doc;
-    public Nodo ant;
-    public Nodo sig;
+    public NodoDoble ant;
+    public NodoDoble sig;
     
-    public Nodo(Docente d){
+    public NodoDoble(Docente d){
         this.doc=d;
         ant=sig=null;
     }//fin constructor    

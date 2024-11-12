@@ -6,8 +6,8 @@ import java.io.Serializable;
 //import javax.swing.JTextArea;
 
 public class ListaEnlazada implements Serializable{
-    public Nodo ini;
-    public Nodo fin;
+    public NodoEnlazado ini;
+    public NodoEnlazado fin;
     private int ctotal;
     
     public ListaEnlazada(){
@@ -16,7 +16,7 @@ public class ListaEnlazada implements Serializable{
     //metodo que agrega un objeto al inicio de la lista
     public void AgregarAlInicio(Estudiante est){
         
-        Nodo nuevo=new Nodo(est);
+        NodoEnlazado nuevo=new NodoEnlazado(est);
         
         if(ini==null && fin==null){
             ini=fin=nuevo; 
@@ -26,7 +26,10 @@ public class ListaEnlazada implements Serializable{
         }
     }
     //metodo que agrega un nodo al inicio de la lista
-    public void AgregarAlFinal(Nodo nuevo){
+    public void AgregarAlFinal(Estudiante est){
+        
+        NodoEnlazado nuevo=new NodoEnlazado(est);
+        
         if(ini==null && fin==null){
             ini=fin=nuevo; 
         }else{
@@ -37,8 +40,8 @@ public class ListaEnlazada implements Serializable{
     }
     
     //Metodo que busca un estudiante por medio de su DNI
-    public Nodo BuscarPorDni(String dnibuscado){
-        Nodo aux=ini;
+    public NodoEnlazado BuscarPorDni(String dnibuscado){
+        NodoEnlazado aux=ini;
         while(aux!=null){
             if(dnibuscado.equals(aux.est.getDni())){
                 return aux;
@@ -48,30 +51,9 @@ public class ListaEnlazada implements Serializable{
         return null;
     }
 
-    
-    
-    //metodo que muestra en un TextArea la cantidad de estudiantes por
-    //cada nivel
-   /* public void MostrarResumen(JTextArea txa){       
-        int contini=0,contprim=0,contsec=0;
-        ctotal=0;
-        for(Nodo aux=ini;aux!=null;aux=aux.sig){
-            ctotal++;
-            switch(aux.est.getNivel()){
-                case "INICIAL": contini++; break;
-                case "PRIMARIA": contprim++; break;
-                case "SECUNDARIA": contsec++; break;
-            }
-        }//fin for
-        txa.setText("Cantidad estudiantes           : "+ctotal+
-                  "\nEstudiantes nivel inicial      : "+contini+
-                  "\nEstudiantes nivel primaria     : "+contprim+
-                  "\nEstudiantes nivel secundaria   : "+contsec);
-    }
-    */
    //metodo que elimina un nodo
-    public void EliminarEstudiante(Nodo actual){
-        Nodo anterior=ini;
+    public void EliminarEstudiante(NodoEnlazado actual){
+        NodoEnlazado anterior=ini;
         while(anterior.sig!=actual && anterior.sig!=null){
             anterior=anterior.sig;
         }
@@ -85,27 +67,33 @@ public class ListaEnlazada implements Serializable{
     }//fin metodo
            
     //metodo que actualiza el estudiantes de un nodo
-    public void ActualizarEst(Nodo actual,Estudiante nuevoest){
+    public void ActualizarEst(NodoEnlazado actual,Estudiante nuevoest){
         actual.est = nuevoest;
     }
-    
+//    public ListaEnlazada clonar() {
+//        ListaEnlazada copia = new ListaEnlazada();
+//        if (this.ini == null) {
+//            return copia; // Si la lista está vacía, se retorna una lista vacía
+//        }
+//        return copia;
+//    }
     
     
     
 
-    public Nodo getIni() {
+    public NodoEnlazado getIni() {
         return ini;
     }
 
-    public void setIni(Nodo ini) {
+    public void setIni(NodoEnlazado ini) {
         this.ini = ini;
     }
 
-    public Nodo getFin() {
+    public NodoEnlazado getFin() {
         return fin;
     }
 
-    public void setFin(Nodo fin) {
+    public void setFin(NodoEnlazado fin) {
         this.fin = fin;
     }
 

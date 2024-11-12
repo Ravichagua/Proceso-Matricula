@@ -13,7 +13,7 @@ public class ControladorDocente  implements ActionListener {
     DocenteVista vista;
     ListaEnlazadaDoble lista;
     
-    Nodo encontrado;
+    NodoDoble encontrado;
     
     public ControladorDocente(DocenteVista fd){
         vista=fd;
@@ -36,7 +36,7 @@ public class ControladorDocente  implements ActionListener {
         ProcesosDocente.MostrarDocentes(vista, lista);
         
         vista.btnEliminar.setEnabled(false);//boton eliminar desactivado
-    }//fin actualizar
+    }
     
     
     @Override
@@ -46,7 +46,7 @@ public class ControladorDocente  implements ActionListener {
            Docente doc = ProcesosDocente.LeerDocente(vista);
            lista.InsertarAlFinal(doc);
            ActualizarForma();
-       }//fin registrar
+       }
        if(e.getSource()==vista.btnBuscar){
          
          String codbuscado = Mensajes.LeerTexto("Ingrese el codigo a buscar...");
@@ -62,7 +62,7 @@ public class ControladorDocente  implements ActionListener {
 
              vista.btnEliminar.setEnabled(true);//boton eliminar activado
 }
-       }//fin consultar
+       }
        if(e.getSource()== vista.btnEliminar){
            int resp = Mensajes.Confirmar("CONFIRMAR!!!","Desea eliminar el nodo?");
            if(resp==0){
@@ -70,7 +70,7 @@ public class ControladorDocente  implements ActionListener {
                ActualizarForma();
                
            }
-       }//fin eliminar
+       }
        if(e.getSource()== vista.btnOrdenar){
           
           System.out.println("this got triggered");
@@ -80,9 +80,9 @@ public class ControladorDocente  implements ActionListener {
           ProcesosDocente.MostrarDocentes(vista,copia);
           
           
-       }//fin ordenar
-    }//fin del action    
+       }
+    }   
     
     
-}//fin de la clase
+}
 

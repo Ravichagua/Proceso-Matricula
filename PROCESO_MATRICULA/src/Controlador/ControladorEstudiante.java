@@ -1,7 +1,7 @@
 package Controlador;
 
 import Modelo.Estudiante;
-import Estructura.ListaEstudiantes;
+
 import Procesos.Mensajes;
 import Vista.EstudianteVista;
 import Procesos.ProcesosEstudiante;
@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Persistencia.PersistenciaEstudiante;
 import Estructura.ListaEnlazada.ListaEnlazada;
-import Estructura.ListaEnlazada.Nodo;
+import Estructura.ListaEnlazada.NodoEnlazado;
 import Ordenamientos.OrdenarListasEnlazadas;
 
 public class ControladorEstudiante implements ActionListener{
@@ -17,11 +17,10 @@ public class ControladorEstudiante implements ActionListener{
     Estudiante est;
     ListaEnlazada Lista;
     
-    //int pos;
-    Nodo pos;
+
+    NodoEnlazado pos;
     public ControladorEstudiante(EstudianteVista EV){
         vista=EV;
-        // !!!!!!!!!!!!!!!!!!!!!!!!!!!falta boton actualizar!!!!!!!!!!!!!!!!!!!!!!
         
         vista.btnGuardar.addActionListener(this);
         vista.btnBuscar.addActionListener(this);
@@ -51,32 +50,22 @@ public class ControladorEstudiante implements ActionListener{
            if(pos==null){
                Mensajes.Mostrar("DNI "+dnibus+" no existe en la lista..");
            }else{
-               //est = Lista.Recuperar(pos);
-               est=pos.est;
+
+               Estudiante estu=pos.est;
                
-               vista.txtDni.setText(est.getDni());
-               vista.txtNombre.setText(est.getNombre());
-               vista.spnEdad.setValue(est.getEdad());
-               vista.txtApellido.setText(est.getApellido());
-               switch(est.getGrado()){
+               vista.txtDni.setText(estu.getDni());
+               vista.txtNombre.setText(estu.getNombre());
+               vista.spnEdad.setValue(estu.getEdad());
+               vista.txtApellido.setText(estu.getApellido());
+               switch(estu.getGrado()){
                    case "INICIAL": vista.cbxGrado.setSelectedIndex(0); break;
                    case "PRIMARIA": vista.cbxGrado.setSelectedIndex(1); break;
                    case "SECUNDARIA": vista.cbxGrado.setSelectedIndex(2); break;
                }
-               /*switch(est.getDisc()){
-                   case "SI": vista.cbxDiscapacidad.setSelectedIndex(0); break;
-                   case "NO": vista.cbxDiscapacidad.setSelectedIndex(1); break;
-               }*/
+
                vista.btnEliminar.setEnabled(true);
            }
-       }//fin consultar
-//       if(e.getSource() == vista.btnActualizar){
-//           est =  ProcesosEstudiante.LeerEstudiante(vista);
-//           Lista.Reemplazar(pos, est);
-//           AlmacenarEstudiante.GuardarEstudiante(Lista);
-//           ProcesosEstudiante.LimpiarEntradas(vista);
-//           ProcesosEstudiante.MostrarEst(vista, Lista); 
-//       }//fin actualizar
+       }
        if(e.getSource()== vista.btnEliminar){
            int respuesta = Mensajes.Confirmar("Confirmar!!!",
                                           "Desea eliminar el registro?");
@@ -86,17 +75,15 @@ public class ControladorEstudiante implements ActionListener{
                ProcesosEstudiante.LimpiarEntradas(vista);
                ProcesosEstudiante.MostrarEst(vista, Lista); 
            }
-       }//fin eliminar       
-//       if(e.getSource()== vista.btnOrdenar){
-//          
-//          System.out.println("this got triggered");
-//          
-//          ListaEstudiantes copia = Lista;
-//          copia = OrdenarListasEnlazadas.PorNombre(copia);
-//          ProcesosEstudiante.MostrarEst(vista,copia);
+       }     
+       if(e.getSource()== vista.btnOrdenar){
+           
+            ListaEnlazada copia =Lista;
+            OrdenarListasEnlazadas.PorEdad(copia);
+            ProcesosEstudiante.MostrarEst(vista,copia);
           
-          
-       }//fin ordenar
-    }//fin action   
+       }
+    }
+}
     
 

@@ -121,7 +121,8 @@ public class MenuPrincipalVista extends javax.swing.JFrame {
     }//GEN-LAST:event_docentesMenuActionPerformed
 
     private void horarioMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_horarioMenuActionPerformed
-
+        HorarioVista instaciaHV=new HorarioVista();
+        ControladorHorario ctlr=new ControladorHorario(instaciaHV);
     }//GEN-LAST:event_horarioMenuActionPerformed
 
     private void salonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salonMenuActionPerformed

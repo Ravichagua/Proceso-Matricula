@@ -13,7 +13,7 @@ public class ProcesosDocente {
        String titulos[]={"Num","Nombre","Apellido","Asignatura","Codigo"};
        DefaultTableModel mt  = new DefaultTableModel(null,titulos);
        dv.tblDatos.setModel(mt);
-       Nodo aux=lista.ini;
+       NodoDoble aux=lista.ini;
        int num=0;
        while(aux!=null){
            num++;

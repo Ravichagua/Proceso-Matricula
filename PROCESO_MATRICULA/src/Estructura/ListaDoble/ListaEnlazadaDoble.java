@@ -2,8 +2,8 @@ package Estructura.ListaDoble;
 import Modelo.*;
 import java.io.*;
 public class ListaEnlazadaDoble implements Serializable {
-    public Nodo ini;
-    public Nodo fin;
+    public NodoDoble ini;
+    public NodoDoble fin;
     
     public ListaEnlazadaDoble(){
         
@@ -11,7 +11,7 @@ public class ListaEnlazadaDoble implements Serializable {
     }//fin de constructor
     //metodo que inserta un nodo al final de la lista
     public void InsertarAlFinal(Docente doc){
-       Nodo nuevo =  new Nodo(doc);
+       NodoDoble nuevo =  new NodoDoble(doc);
        if(ini==null){
            ini=fin=nuevo;
        }else{
@@ -22,8 +22,8 @@ public class ListaEnlazadaDoble implements Serializable {
        fin.sig=null;               
     }//fin insertar
     //metodo que busca un nodo por el codigo de docente
-    public Nodo BuscarPorCodigo(String codigo){
-        Nodo encontrado=ini;
+    public NodoDoble BuscarPorCodigo(String codigo){
+        NodoDoble encontrado=ini;
         while(encontrado!=null){
             if(encontrado.doc.getCodigo().equals(codigo))
                 return encontrado;
@@ -32,7 +32,7 @@ public class ListaEnlazadaDoble implements Serializable {
         return null;
     }//fin buscar
     //metodo que elimina un nodo
-    public void EliminarNodo(Nodo actual){
+    public void EliminarNodo(NodoDoble actual){
       if(actual!=null){
           if(actual==ini){
               ini = actual.sig;
