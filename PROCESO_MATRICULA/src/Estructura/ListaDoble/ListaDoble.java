@@ -4,7 +4,9 @@ import java.io.*;
 public class ListaDoble implements Serializable {
     public Nodo ini;
     public Nodo fin;
+    
     public ListaDoble(){
+        
         ini=fin=null;
     }//fin de constructor
     //metodo que inserta un nodo al final de la lista

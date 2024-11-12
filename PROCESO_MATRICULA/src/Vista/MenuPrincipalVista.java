@@ -4,7 +4,7 @@
  */
 package Vista;
 
-import Controlador.ControladorDocente;
+import Controlador.*;
 import javax.swing.JFrame;
 
 /**
@@ -110,7 +110,8 @@ public class MenuPrincipalVista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void estudiantesMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estudiantesMenuActionPerformed
-
+        EstudianteVista instanciaEV = new EstudianteVista();
+        ControladorEstudiante ctrl =new ControladorEstudiante(instanciaEV);
     }//GEN-LAST:event_estudiantesMenuActionPerformed
 
     private void docentesMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_docentesMenuActionPerformed

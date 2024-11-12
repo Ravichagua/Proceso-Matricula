@@ -41,7 +41,7 @@ public class ControladorDocente  implements ActionListener {
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+        //aca se usa LISTA DOBLE
        if(e.getSource()==vista.btnGuardar){
            Docente doc = ProcesosDocente.LeerDocente(vista);
            lista.InsertarAlFinal(doc);

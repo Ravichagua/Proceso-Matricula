@@ -11,6 +11,7 @@ public class Docente implements Serializable {
     private String codigo;
     
     public Object[] Registro(int num){
+        
         Object[] fila={num,nombre,apellido,asignatura,codigo};
         return fila;
     }//fin registro

@@ -1,20 +1,19 @@
 package Persistencia;
 
+import Estructura.ListaEstudiantes;
+import Procesos.Mensajes;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import Estructura.ListaDoble.*;
 
-import Procesos.Mensajes;
-
-public class PersistenciaDocente {
-    public static String ARCHIVO3="DatosListaDobleDocente.bin";
-     
-    public static void Guardar(ListaDoble Lista){
+public class PersistenciaEstudiante {
+    public static String ARCHIVO1="DatosEstudiantes.bin";
+    
+    public static void GuardarEstudiante(ListaEstudiantes Lista){
        try{
-           FileOutputStream fos=new FileOutputStream(ARCHIVO3);
+           FileOutputStream fos=new FileOutputStream(ARCHIVO1);
            ObjectOutputStream oos =  new ObjectOutputStream(fos);
            oos.writeObject(Lista);
            oos.close();
@@ -23,16 +22,16 @@ public class PersistenciaDocente {
        }       
     }// fin guardar
     
-    public static ListaDoble Recuperar(){
-        ListaDoble Lista=new ListaDoble();
+    public static ListaEstudiantes RecuperarEstudiantes(){
+        ListaEstudiantes Lista=new ListaEstudiantes();
        try{
-           FileInputStream fis =  new FileInputStream(ARCHIVO3);
+           FileInputStream fis =  new FileInputStream(ARCHIVO1);
            ObjectInputStream ois = new ObjectInputStream(fis);
-           Lista = (ListaDoble)ois.readObject();
+           Lista = (ListaEstudiantes)ois.readObject();
            ois.close();
        }catch(Exception ex){
            Mensajes.Mostrar("ERROR no se puede recuperar..."+ex);
        }
        return Lista;
-    }//fin recuperar   
+    }  
 }
