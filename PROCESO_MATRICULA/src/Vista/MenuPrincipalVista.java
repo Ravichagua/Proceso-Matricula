@@ -42,8 +42,6 @@ public class MenuPrincipalVista extends javax.swing.JFrame {
         estudiantesMenu = new javax.swing.JMenuItem();
         docentesMenu = new javax.swing.JMenuItem();
         horarioMenu = new javax.swing.JMenuItem();
-        salonMenu = new javax.swing.JMenuItem();
-        matriculaMenu = new javax.swing.JMenuItem();
 
         jMenu3.setText("jMenu3");
 
@@ -74,22 +72,6 @@ public class MenuPrincipalVista extends javax.swing.JFrame {
             }
         });
         jMenu1.add(horarioMenu);
-
-        salonMenu.setText("Salon");
-        salonMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salonMenuActionPerformed(evt);
-            }
-        });
-        jMenu1.add(salonMenu);
-
-        matriculaMenu.setText("Matricula");
-        matriculaMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                matriculaMenuActionPerformed(evt);
-            }
-        });
-        jMenu1.add(matriculaMenu);
 
         jMenuBar1.add(jMenu1);
 
@@ -124,14 +106,6 @@ public class MenuPrincipalVista extends javax.swing.JFrame {
         HorarioVista instaciaHV=new HorarioVista();
         ControladorHorario ctlr=new ControladorHorario(instaciaHV);
     }//GEN-LAST:event_horarioMenuActionPerformed
-
-    private void salonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salonMenuActionPerformed
-
-    }//GEN-LAST:event_salonMenuActionPerformed
-
-    private void matriculaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matriculaMenuActionPerformed
-
-    }//GEN-LAST:event_matriculaMenuActionPerformed
 
     
     
@@ -181,7 +155,5 @@ public class MenuPrincipalVista extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem matriculaMenu;
-    private javax.swing.JMenuItem salonMenu;
     // End of variables declaration//GEN-END:variables
 }
