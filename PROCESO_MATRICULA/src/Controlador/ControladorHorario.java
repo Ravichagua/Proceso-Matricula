@@ -20,7 +20,7 @@ public class ControladorHorario implements ActionListener {
 
          vista.btnBuscar.addActionListener(this);
         
-         vista.setLocationRelativeTo(null);
+         //vista.setLocationRelativeTo(null);
          vista.setVisible(true);
          
 

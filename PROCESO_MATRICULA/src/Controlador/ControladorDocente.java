@@ -1,5 +1,6 @@
 package Controlador;
 
+import Ordenamiento.Insercion;
 import java.awt.event.ActionListener;
 import Vista.DocenteVista;
 import java.awt.event.ActionEvent;
@@ -8,7 +9,7 @@ import Modelo.Docente;
 import Procesos.*;
 import Persistencia.PersistenciaDocente;
 import Estructura.ListaDoble.*;
-import Ordenamientos.*;
+import Estructura.Pila.Pila;
 public class ControladorDocente  implements ActionListener {
     DocenteVista vista;
     ListaEnlazadaDoble lista;
@@ -75,12 +76,16 @@ public class ControladorDocente  implements ActionListener {
           
           System.out.println("this got triggered");
           
+          
+          
           ListaEnlazadaDoble copia = lista;
-          copia = OrdenarListasDobles.PorNombre(copia);
+          
+          copia = Insercion.ListaDoblePorNombre(copia);
+          
           ProcesosDocente.MostrarDocentes(vista,copia);
           
           
-       }
+        }
     }   
     
     

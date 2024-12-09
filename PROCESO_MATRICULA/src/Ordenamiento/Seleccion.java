@@ -1,9 +1,9 @@
-package Ordenamientos;
+package Ordenamiento;
 //librerias
 import Estructura.ListaEnlazada.NodoEnlazado;
 import Estructura.ListaEnlazada.ListaEnlazada;
 import Modelo.*;
-public class OrdenarListasEnlazadas {    
+public class Seleccion {    
     public static ListaEnlazada PorNombres(ListaEnlazada a){
         //Ordenamiento seleccion
         NodoEnlazado k;

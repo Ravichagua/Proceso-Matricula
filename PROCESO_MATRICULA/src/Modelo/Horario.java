@@ -8,6 +8,10 @@ public class Horario implements Serializable{
     private String horaInicio;
     private String curso;
     private String salonId;
+    
+    private String horaFinal;
+    private String profesor;
+    private String grado;
 
     public Horario(Object[] registro){
        this.horaInicio=registro[0].toString();

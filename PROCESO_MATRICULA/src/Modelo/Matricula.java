@@ -1,58 +1,72 @@
 package Modelo;
 
+import java.io.Serializable;
+import java.util.Date;
+import Procesos.ProcesosMatricula;
 
-public class Matricula {
-    private int id;
-    private int estudianteId;
-    private int cursoId;
-    private int salonId;
-    private String fechaMatricula;
+public class Matricula implements Serializable{
 
-    public Matricula(int id, int estudianteId, int cursoId, int salonId, String fechaMatricula) {
-        this.id = id;
-        this.estudianteId = estudianteId;
-        this.cursoId = cursoId;
-        this.salonId = salonId;
-        this.fechaMatricula = fechaMatricula;
+    private String dni;
+    private String estudianteNombres;
+    private String Grado;
+    private String Estado;
+    private Date fechaMatricula;
+
+//    public Matricula(int id, int estudianteId, int cursoId, int salonId, String fechaMatricula) {
+//        this.dni = id;
+//        this.estudianteId = estudianteId;
+//        this.cursoId = cursoId;
+//        this.salonId = salonId;
+//        this.fechaMatricula = fechaMatricula;
+//    }
+    public Object[] getRegistro(){
+       
+       Object[] fila={getDni(), getEstudianteNombres(), getGrado(), getEstado(),getFechaMatricula()};
+       return fila;
+   }
+
+    public String getDni() {
+        return dni;
     }
 
-    public int getId() {
-        return id;
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getEstudianteNombres() {
+        return estudianteNombres;
     }
 
-    public int getEstudianteId() {
-        return estudianteId;
+    public void setEstudianteNombres(String estudianteNombres) {
+        this.estudianteNombres = estudianteNombres;
     }
 
-    public void setEstudianteId(int estudianteId) {
-        this.estudianteId = estudianteId;
+    public String getGrado() {
+        return Grado;
     }
 
-    public int getCursoId() {
-        return cursoId;
+    public void setGrado(String Grado) {
+        this.Grado = Grado;
     }
 
-    public void setCursoId(int cursoId) {
-        this.cursoId = cursoId;
+    public String getEstado() {
+        return Estado;
     }
 
-    public int getSalonId() {
-        return salonId;
+    public void setEstado(String Estado) {
+        this.Estado = Estado;
     }
-
-    public void setSalonId(int salonId) {
-        this.salonId = salonId;
-    }
-
+    
     public String getFechaMatricula() {
+        String Fecha=ProcesosMatricula.DateToString(fechaMatricula);
+        return Fecha;
+    }
+    public Date getFecha() {
+        
         return fechaMatricula;
     }
 
-    public void setFechaMatricula(String fechaMatricula) {
+    public void setFechaMatricula(Date fechaMatricula) {
         this.fechaMatricula = fechaMatricula;
     }
     

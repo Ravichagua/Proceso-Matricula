@@ -6,7 +6,7 @@ package Vista;
 
 import Controlador.*;
 import javax.swing.JFrame;
-
+import javax.swing.JInternalFrame;
 /**
  *
  * @author user
@@ -17,16 +17,26 @@ public class MenuPrincipalVista extends javax.swing.JFrame {
      * Creates new form menuVieweight
      */
     public MenuPrincipalVista() {
-        initComponents();
+        
         
         initComponents();
         setTitle("Menu Principal");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setLocationRelativeTo(null);
-        setLayout(null);
+        //setLocationRelativeTo(null);
+        setResizable(true);
+        //setLayout(null);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        
+        
+        
         
     }
-
+    private void IniciarFrame(JInternalFrame frame){
+        
+        this.jDesktopPane.removeAll();
+        this.jDesktopPane.add(frame);
+        this.jDesktopPane.repaint();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,15 +47,28 @@ public class MenuPrincipalVista extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenu3 = new javax.swing.JMenu();
+        jDesktopPane = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         estudiantesMenu = new javax.swing.JMenuItem();
         docentesMenu = new javax.swing.JMenuItem();
         horarioMenu = new javax.swing.JMenuItem();
+        matriculamenu = new javax.swing.JMenuItem();
 
         jMenu3.setText("jMenu3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout jDesktopPaneLayout = new javax.swing.GroupLayout(jDesktopPane);
+        jDesktopPane.setLayout(jDesktopPaneLayout);
+        jDesktopPaneLayout.setHorizontalGroup(
+            jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 767, Short.MAX_VALUE)
+        );
+        jDesktopPaneLayout.setVerticalGroup(
+            jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 519, Short.MAX_VALUE)
+        );
 
         jMenu1.setText("Vistas");
 
@@ -73,6 +96,14 @@ public class MenuPrincipalVista extends javax.swing.JFrame {
         });
         jMenu1.add(horarioMenu);
 
+        matriculamenu.setText("Matricula");
+        matriculamenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                matriculamenuActionPerformed(evt);
+            }
+        });
+        jMenu1.add(matriculamenu);
+
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
@@ -81,11 +112,11 @@ public class MenuPrincipalVista extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 767, Short.MAX_VALUE)
+            .addComponent(jDesktopPane)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
+            .addComponent(jDesktopPane, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
@@ -93,19 +124,29 @@ public class MenuPrincipalVista extends javax.swing.JFrame {
 
     private void estudiantesMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estudiantesMenuActionPerformed
         EstudianteVista instanciaEV = new EstudianteVista();
+        IniciarFrame(instanciaEV);
         ControladorEstudiante ctrl =new ControladorEstudiante(instanciaEV);
     }//GEN-LAST:event_estudiantesMenuActionPerformed
 
     private void docentesMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_docentesMenuActionPerformed
         DocenteVista instanciaDV=new DocenteVista();
+        IniciarFrame(instanciaDV);
         ControladorDocente ctrl=new ControladorDocente(instanciaDV);
         
     }//GEN-LAST:event_docentesMenuActionPerformed
 
     private void horarioMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_horarioMenuActionPerformed
         HorarioVista instaciaHV=new HorarioVista();
+        IniciarFrame(instaciaHV);
         ControladorHorario ctlr=new ControladorHorario(instaciaHV);
     }//GEN-LAST:event_horarioMenuActionPerformed
+
+    private void matriculamenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matriculamenuActionPerformed
+        // TODO add your handling code here:
+        MatriculaVista instaciaMV=new MatriculaVista();
+        IniciarFrame(instaciaMV);
+        ControladorMatricula ctlr=new ControladorMatricula(instaciaMV);
+    }//GEN-LAST:event_matriculamenuActionPerformed
 
     
     
@@ -152,8 +193,10 @@ public class MenuPrincipalVista extends javax.swing.JFrame {
     private javax.swing.JMenuItem docentesMenu;
     private javax.swing.JMenuItem estudiantesMenu;
     private javax.swing.JMenuItem horarioMenu;
+    public javax.swing.JDesktopPane jDesktopPane;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem matriculamenu;
     // End of variables declaration//GEN-END:variables
 }

@@ -18,10 +18,7 @@ public class ArbolHorario implements Serializable {
     
     //metodo que agrega nodos al arbol
     public NodoHorario AgregarHorario(NodoHorario nodo,Horario elem){
-        
-        
-        
-        
+
         if(nodo==null){
             NodoHorario nuevo =  new NodoHorario(elem);
             return nuevo;

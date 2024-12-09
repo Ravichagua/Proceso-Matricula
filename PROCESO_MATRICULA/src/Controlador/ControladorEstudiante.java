@@ -10,7 +10,8 @@ import java.awt.event.ActionListener;
 import Persistencia.PersistenciaEstudiante;
 import Estructura.ListaEnlazada.ListaEnlazada;
 import Estructura.ListaEnlazada.NodoEnlazado;
-import Ordenamientos.OrdenarListasEnlazadas;
+import Ordenamiento.Seleccion;
+import Ordenamiento.Burbuja;
 
 public class ControladorEstudiante implements ActionListener{
     EstudianteVista vista;
@@ -81,14 +82,14 @@ public class ControladorEstudiante implements ActionListener{
        if(e.getSource()== vista.btnOrdenar2){//chnged
            
             ListaEnlazada copia =Lista;
-            OrdenarListasEnlazadas.PorEdad(copia);
+            Burbuja.PorEdad(copia);
             ProcesosEstudiante.MostrarEst(vista,copia);
           
        }
        if(e.getSource()== vista.btnOrdenar){
            
             ListaEnlazada copia =Lista;
-            OrdenarListasEnlazadas.PorNombres(copia);
+            Seleccion.PorNombres(copia);
             ProcesosEstudiante.MostrarEst(vista,copia);
           
        }
