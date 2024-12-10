@@ -24,7 +24,7 @@ public class ControladorDocente  implements ActionListener {
         vista.btnEliminar.addActionListener(this);
         vista.btnOrdenar.addActionListener(this);
         
-        lista = PersistenciaDocente.Recuperar();
+        lista = PersistenciaDocente.RecuperarDocente();
         ProcesosDocente.Presentacion(vista);
         ProcesosDocente.MostrarDocentes(vista, lista);
         
@@ -33,7 +33,7 @@ public class ControladorDocente  implements ActionListener {
     }
     private void ActualizarForma(){
         ProcesosDocente.LimpiarEntradas(vista);
-        PersistenciaDocente.Guardar(lista);
+        PersistenciaDocente.GuardarDocente(lista);
         ProcesosDocente.MostrarDocentes(vista, lista);
         
         vista.btnEliminar.setEnabled(false);//boton eliminar desactivado

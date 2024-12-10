@@ -18,7 +18,7 @@ public class Pila implements Serializable {
     //agregando datos a la pila
     public void Apilar(Matricula objetoMatricula){
         pila.push(objetoMatricula);
-        PersistenciaMatricula.Guardar(this);
+        PersistenciaMatricula.GuardarMatricula(this);
     }
     //método que elimina un operario de la pila
     public void Desapilar(){
@@ -26,7 +26,7 @@ public class Pila implements Serializable {
             Mensajes.Mostrar("Pila vacía");
         }else{
            pila.pop();
-           PersistenciaMatricula.Guardar(this);
+           PersistenciaMatricula.GuardarMatricula(this);
         }
     }
     //metodo que visualiza el ultimo elemento de la pila

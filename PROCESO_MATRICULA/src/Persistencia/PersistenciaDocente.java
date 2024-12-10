@@ -12,7 +12,7 @@ import Procesos.Mensajes;
 public class PersistenciaDocente {
     public static String ARCHIVO3="DatosListaDobleDocente.bin";
      
-    public static void Guardar(ListaEnlazadaDoble Lista){
+    public static void GuardarDocente(ListaEnlazadaDoble Lista){
        try{
            FileOutputStream fos=new FileOutputStream(ARCHIVO3);
            ObjectOutputStream oos =  new ObjectOutputStream(fos);
@@ -23,7 +23,7 @@ public class PersistenciaDocente {
        }       
     }
     
-    public static ListaEnlazadaDoble Recuperar(){
+    public static ListaEnlazadaDoble RecuperarDocente(){
         ListaEnlazadaDoble Lista=new ListaEnlazadaDoble();
        try{
            FileInputStream fis =  new FileInputStream(ARCHIVO3);

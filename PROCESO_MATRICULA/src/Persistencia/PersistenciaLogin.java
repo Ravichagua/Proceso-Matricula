@@ -1,6 +1,6 @@
 package Persistencia;
 
-import Estructura.ListaEnlazada.ListaEnlazada;
+import Estructura.ArregloObjeto;
 import Procesos.Mensajes;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -11,7 +11,7 @@ import java.io.ObjectOutputStream;
 public class PersistenciaLogin {
     public static String ARCHIVO1="DatosLogin.bin";
     
-    public static void GuardarEstudiante(ListaEnlazada Lista){
+    public static void GuardarLogin(ArregloObjeto Lista){
        try{
            FileOutputStream fos=new FileOutputStream(ARCHIVO1);
            ObjectOutputStream oos =  new ObjectOutputStream(fos);
@@ -22,12 +22,12 @@ public class PersistenciaLogin {
        }       
     }
     
-    public static ListaEnlazada RecuperarEstudiantes(){
-        ListaEnlazada Lista=new ListaEnlazada();
+    public static ArregloObjeto RecuperarLogin(){
+        ArregloObjeto Lista=new ArregloObjeto();
        try{
            FileInputStream fis =  new FileInputStream(ARCHIVO1);
            ObjectInputStream ois = new ObjectInputStream(fis);
-           Lista = (ListaEnlazada)ois.readObject();
+           Lista = (ArregloObjeto)ois.readObject();
            ois.close();
        }catch(Exception ex){
            Mensajes.Mostrar("ERROR no se puede recuperar..."+ex);

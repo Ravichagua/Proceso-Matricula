@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 import Estructura.ArbolBinario.ArbolHorario;
 public class PersistenciaHorario {
-    public static void GuardarEnArchivo(ArbolHorario arbol,int numero){
+    public static void GuardarHorario(ArbolHorario arbol,int numero){
         
         String numeroString=String.valueOf(numero);
         
@@ -18,7 +18,7 @@ public class PersistenciaHorario {
                "ERROR no se puede guardar en archivo "+ex);
         }
     }
-    public static ArbolHorario RecuperarDeArchivo(int numero){
+    public static ArbolHorario RecuperarHorario(int numero){
       ArbolHorario arbol = new ArbolHorario();  
       
       String numeroString=String.valueOf(numero);

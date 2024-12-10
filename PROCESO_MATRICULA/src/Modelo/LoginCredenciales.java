@@ -1,7 +1,9 @@
 package Modelo;
 
+import java.io.Serializable;
 
-public class LoginCredenciales {
+
+public class LoginCredenciales implements Serializable  {
     private String usuario;
     private String contrasena;
     

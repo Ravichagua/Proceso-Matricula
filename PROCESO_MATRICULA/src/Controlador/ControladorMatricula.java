@@ -22,13 +22,13 @@ public class ControladorMatricula implements ActionListener {
         vista.btnEliminar.addActionListener(this);
         vista.btnOrdenar.addActionListener(this);
         vista.btnBuscar.addActionListener(this);
-        pila=PersistenciaMatricula.Recuperar();
+        pila=PersistenciaMatricula.RecuperarMatricula();
         
         vista.txtFecha.setText(ProcesosMatricula.FechaActual());
         
         ProcesosMatricula.MostrarMatricula(vista,pila); 
         
-       vista.setTitle("Registro de operarios usando pilas");
+       vista.setTitle("Matricula");
        
         vista.setVisible(true);
     }
@@ -38,7 +38,7 @@ public class ControladorMatricula implements ActionListener {
         if(e.getSource()==vista.btnGuardar){
             System.out.println("awdaw");
             pila.Apilar(ProcesosMatricula.LeerMatricula(vista));
-            PersistenciaMatricula.Guardar(pila);
+            PersistenciaMatricula.GuardarMatricula(pila);
               
             ProcesosMatricula.LimpiarEntradas(vista);
             

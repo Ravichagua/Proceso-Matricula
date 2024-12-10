@@ -16,7 +16,7 @@ public class ArrayListDatos {
         
     public void ExtraerListaProfesores(){
         
-        ListaEnlazadaDoble listaProfesores = PersistenciaDocente.Recuperar();
+        ListaEnlazadaDoble listaProfesores = PersistenciaDocente.RecuperarDocente();
         
         NodoDoble nodoActual=listaProfesores.ini;
         

@@ -22,8 +22,11 @@ public class MenuPrincipalVista extends javax.swing.JFrame {
      * Creates new form menuVieweight
      */
     public MenuPrincipalVista() {
+        Image icon = new ImageIcon(this.getClass().getResource("/imagenes/icon.png")).getImage();
+        this.setIconImage(icon);
         
         initComponents();
+        
         setTitle("Menu Principal");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(true);
@@ -60,7 +63,7 @@ public class MenuPrincipalVista extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jDesktopPane.setBackground(new java.awt.Color(1, 43, 82));
+        jDesktopPane.setBackground(new java.awt.Color(153, 204, 255));
 
         javax.swing.GroupLayout jDesktopPaneLayout = new javax.swing.GroupLayout(jDesktopPane);
         jDesktopPane.setLayout(jDesktopPaneLayout);

@@ -12,7 +12,7 @@ import Procesos.Mensajes;
 public class PersistenciaMatricula {
     public static String ARCHIVO3="DatosPilaMatricula.bin";
      
-    public static void Guardar(Pila pila){
+    public static void GuardarMatricula(Pila pila){
        try{
            FileOutputStream fos=new FileOutputStream(ARCHIVO3);
            ObjectOutputStream oos =  new ObjectOutputStream(fos);
@@ -23,7 +23,7 @@ public class PersistenciaMatricula {
        }       
     }
     
-    public static Pila Recuperar(){
+    public static Pila RecuperarMatricula(){
         Pila Lista=new Pila();
        try{
            FileInputStream fis =  new FileInputStream(ARCHIVO3);

@@ -37,7 +37,7 @@ public class ControladorHorario implements ActionListener {
        //***************************************************
 
        arbol = new ArbolHorario();
-       arbol = PersistenciaHorario.RecuperarDeArchivo(diaNumero);
+       arbol = PersistenciaHorario.RecuperarHorario(diaNumero);
        modTabla = (DefaultTableModel)vista.tblDatos.getModel();
        arbol.MostrarEnOrden(arbol.getRaiz(), modTabla);
 
@@ -60,7 +60,7 @@ public class ControladorHorario implements ActionListener {
             Horario elem =  new Horario(Registro);
             
             arbol.setRaiz(arbol.AgregarHorario(arbol.getRaiz(),elem));
-            PersistenciaHorario.GuardarEnArchivo(arbol,diaNumero);
+            PersistenciaHorario.GuardarHorario(arbol,diaNumero);
             ProcesosHorario.LimpiarTabla(modTabla);
             arbol.MostrarEnOrden(arbol.getRaiz(), modTabla);
             ProcesosHorario.LimpiarEntradas(vista);
@@ -82,7 +82,7 @@ public class ControladorHorario implements ActionListener {
             diaNumero=ProcesosHorario.obtenerDiaNum(vista);
             System.out.println(diaNumero);
             
-            arbol = PersistenciaHorario.RecuperarDeArchivo(diaNumero);
+            arbol = PersistenciaHorario.RecuperarHorario(diaNumero);
             
             ProcesosHorario.LimpiarTabla(modTabla);
             arbol.MostrarEnOrden(arbol.getRaiz(), modTabla);
