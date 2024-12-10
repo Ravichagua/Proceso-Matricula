@@ -53,10 +53,12 @@ public class ControladorHorario implements ActionListener {
      @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()== vista.btnGuardar){
+            
             Object[] Registro={vista.txtHoraInicio.getText(),
                                vista.cbxCurso.getSelectedItem().toString(),
                                vista.cbxProfesor.getSelectedItem().toString(),
                                vista.txtSalon.getText()};
+            
             Horario elem =  new Horario(Registro);
             
             arbol.setRaiz(arbol.AgregarHorario(arbol.getRaiz(),elem));

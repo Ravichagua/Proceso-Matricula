@@ -22,7 +22,7 @@ public class ControladorLogin implements ActionListener {
         vista.btnIngresar.addActionListener(this);
         vista.btnSalir.addActionListener(this);
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         
@@ -48,4 +48,5 @@ public class ControladorLogin implements ActionListener {
             vista.dispose();
        }
     }
+    
 }

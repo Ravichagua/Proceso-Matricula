@@ -29,8 +29,7 @@ public class PersistenciaHorario {
            arbol = (ArbolHorario)ois.readObject();
            ois.close();
         }catch(Exception ex){
-            JOptionPane.showMessageDialog(null,
-               "ERROR no se puede recuperar de archivo"+ex);
+            JOptionPane.showMessageDialog(null,"ERROR no se puede recuperar de archivo"+ex);
         }
         return arbol;
     }
