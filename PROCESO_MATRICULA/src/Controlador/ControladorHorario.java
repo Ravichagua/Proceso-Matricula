@@ -2,6 +2,7 @@ package Controlador;
 
 import Estructura.ArbolBinario.ArbolHorario;
 import Estructura.ArbolBinario.NodoHorario;
+import Estructura.ArrayList.ArrayListDatos;
 import java.awt.event.*;
 import Vista.HorarioVista;
 import Modelo.*;
@@ -14,23 +15,27 @@ public class ControladorHorario implements ActionListener {
     HorarioVista vista;
     ArbolHorario arbol;
      
-     
+
      
     int diaNumero;
 
-    
+    ArrayListDatos profesoresActuales= new ArrayListDatos();
     
     
     public ControladorHorario(HorarioVista HV){
        vista=HV;
        vista.btnGuardar.addActionListener(this);
        vista.btnBuscar.addActionListener(this);
+       vista.cbxCurso.addActionListener(this);
        vista.cbxDia.addActionListener(this);
+       
        vista.setVisible(true);
 
        //***************************************************
        diaNumero=ProcesosHorario.obtenerDiaNum(vista);
        System.out.println(diaNumero);
+       
+
        //***************************************************
 
        arbol = new ArbolHorario();
@@ -38,7 +43,10 @@ public class ControladorHorario implements ActionListener {
        modTabla = (DefaultTableModel)vista.tblDatos.getModel();
        arbol.MostrarEnOrden(arbol.getRaiz(), modTabla);
 
-
+       //**************************************************************
+        
+        profesoresActuales.ExtraerListaProfesores();
+        profesoresActuales.CargarListaProfesores(vista);
 
     }
      
@@ -47,6 +55,7 @@ public class ControladorHorario implements ActionListener {
         if(e.getSource()== vista.btnGuardar){
             Object[] Registro={vista.txtHoraInicio.getText(),
                                vista.cbxCurso.getSelectedItem().toString(),
+                               vista.cbxProfesor.getSelectedItem().toString(),
                                vista.txtSalon.getText()};
             Horario elem =  new Horario(Registro);
             
@@ -78,6 +87,9 @@ public class ControladorHorario implements ActionListener {
             ProcesosHorario.LimpiarTabla(modTabla);
             arbol.MostrarEnOrden(arbol.getRaiz(), modTabla);
             ProcesosHorario.LimpiarEntradas(vista);
+        }
+        if(e.getSource() == vista.cbxCurso){
+            profesoresActuales.CargarListaProfesores(vista);
         }
     }
 }

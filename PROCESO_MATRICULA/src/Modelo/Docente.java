@@ -30,7 +30,10 @@ public class Docente implements Serializable {
     public String getNombre() {
         return nombre;
     }
-
+    public String getNombreCompleto() {
+        return nombre+" "+apellido;
+    }
+    
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }

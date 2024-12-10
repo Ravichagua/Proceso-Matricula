@@ -13,7 +13,7 @@ public class HorarioVista extends javax.swing.JInternalFrame {
         //setLocationRelativeTo(null);
         //setLayout(null);
         
-        String titulos[]={"Hora Inicio","Hora Final","Curso","SalonId","Profesor"};
+        String titulos[]={"Hora Inicio","Hora Final","Curso","Profesor","SalonId"};
         DefaultTableModel mt  = new DefaultTableModel(null,titulos);
         
         this.tblDatos.setModel(mt);
@@ -65,7 +65,7 @@ public class HorarioVista extends javax.swing.JInternalFrame {
         cbxProfesor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbxProfesor.setBorder(javax.swing.BorderFactory.createTitledBorder("Profesor"));
 
-        cbxCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Matematicas", "Comunicacion", "Ingles", "EdFisica", "Quimica", "Informatica", " " }));
         cbxCurso.setBorder(javax.swing.BorderFactory.createTitledBorder("Curso"));
 
         cbxGrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Primero", "Segundo", "Tercero", "Cuarto", "Quinto", "Sexto" }));
@@ -78,14 +78,14 @@ public class HorarioVista extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnGuardar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtSalon, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtHoraInicio, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cbxProfesor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cbxCurso, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cbxGrado, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbxDia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
