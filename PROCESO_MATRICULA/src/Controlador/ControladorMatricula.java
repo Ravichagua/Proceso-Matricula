@@ -14,13 +14,13 @@ import java.util.Date;
 public class ControladorMatricula implements ActionListener {
     MatriculaVista vista;
     Pila pila;
-
+    int numeroEncontrado;
     
     public ControladorMatricula(MatriculaVista MV){
         vista=MV;
         vista.btnGuardar.addActionListener(this);
         vista.btnEliminar.addActionListener(this);
-        vista.btnOrdenar.addActionListener(this);
+        //vista.btnOrdenar.addActionListener(this);
         vista.btnBuscar.addActionListener(this);
         pila=PersistenciaMatricula.RecuperarMatricula();
         
@@ -31,12 +31,13 @@ public class ControladorMatricula implements ActionListener {
        vista.setTitle("Matricula");
        
         vista.setVisible(true);
+        vista.btnEliminar.setEnabled(false);
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==vista.btnGuardar){
-            System.out.println("awdaw");
+
             pila.Apilar(ProcesosMatricula.LeerMatricula(vista));
             PersistenciaMatricula.GuardarMatricula(pila);
               
@@ -47,20 +48,30 @@ public class ControladorMatricula implements ActionListener {
         }
         if(e.getSource()==vista.btnBuscar){
 
-            System.out.println("awdaw");
+            
             int numeroPila =pila.BuscarOperario(Mensajes.LeerTexto("Ingrese el numero de Dni"));
             
             Matricula arEncontrado=pila.ObtenerOpe(numeroPila);
+            numeroEncontrado=numeroPila;
+            System.out.println(numeroEncontrado);
             
             vista.txtDni.setText(arEncontrado.getDni());
             vista.txtNombre.setText(arEncontrado.getEstudianteNombres());
-            vista.cbxGrado.setSelectedItem(arEncontrado.getGrado());
-            vista.cbxEstado.setSelectedItem(arEncontrado.getEstado());
+            
+            vista.cbxGrado.setSelectedIndex(arEncontrado.getGradoNum());
+            
+            vista.cbxEstado.setSelectedIndex(arEncontrado.getEstadoNum());
+            vista.txtFecha.setText(arEncontrado.getFechaMatricula());
+            vista.btnEliminar.setEnabled(true);
             
             
         }
-        if(e.getSource()==vista.btnOrdenar){
-            
+        if(e.getSource()==vista.btnEliminar){
+            pila.EliminarPosicion(numeroEncontrado);
+            PersistenciaMatricula.GuardarMatricula(pila);
+            ProcesosMatricula.MostrarMatricula(vista,pila);
+            ProcesosMatricula.LimpiarEntradas(vista);
+            vista.btnEliminar.setEnabled(false);
         }
 
     }

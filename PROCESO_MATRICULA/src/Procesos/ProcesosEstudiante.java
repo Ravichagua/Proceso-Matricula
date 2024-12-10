@@ -11,17 +11,13 @@ public class ProcesosEstudiante {
     public static void Presentacion(EstudianteVista fe){
        fe.setTitle("Registro de estudiantes...");
        fe.setVisible(true);
-       fe.cbxGrado.removeAllItems();
-       fe.cbxGrado.addItem("INICIAL");
-       fe.cbxGrado.addItem("PRIMARIA");
-       fe.cbxGrado.addItem("SECUNDARIA");
 
    }
    
    public static void LimpiarEntradas(EstudianteVista EV){
        
        EV.txtNombre.setText("");
-       EV.spnEdad.setValue(10);
+       EV.spnEdad.setValue(6);
        EV.txtApellido.setText("");
        EV.cbxGrado.setSelectedIndex(0);
        EV.txtDni.setText("");;

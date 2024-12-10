@@ -55,7 +55,8 @@ public class ControladorHorario implements ActionListener {
             Object[] Registro={vista.txtHoraInicio.getText(),
                                vista.cbxCurso.getSelectedItem().toString(),
                                vista.cbxProfesor.getSelectedItem().toString(),
-                               vista.txtSalon.getText()};
+                               vista.txtSalon.getText(),
+                               vista.cbxGrado.getSelectedItem().toString()};
             
             Horario elem =  new Horario(Registro);
             

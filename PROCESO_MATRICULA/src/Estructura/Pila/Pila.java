@@ -86,7 +86,9 @@ public class Pila implements Serializable {
         pilanueva.pila=StackCopia;
         return pilanueva;
     }
-
+    public void EliminarPosicion(int numero){
+        pila.remove(numero);
+    }
     
     
     

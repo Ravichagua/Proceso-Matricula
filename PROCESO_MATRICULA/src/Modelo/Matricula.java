@@ -51,8 +51,13 @@ public class Matricula implements Serializable{
     }
     
     public String getFechaMatricula() {
+        if(Estado.equals("EN PROCESO")){
+            return "-";
+        }else{
         String Fecha=ProcesosMatricula.DateToString(fechaMatricula);
         return Fecha;
+        }
+        
     }
     public Date getFecha() {
         
@@ -62,6 +67,40 @@ public class Matricula implements Serializable{
     public void setFechaMatricula(Date fechaMatricula) {
         this.fechaMatricula = fechaMatricula;
     }
-    
-    
+    public int getEstadoNum() {
+        System.out.println("Estado NUM DEBE SALIR:"+Estado);
+        if(Estado.equals("MATRICULADO")){
+            return 0;
+        }
+        if(Estado.equals("EN PROCESO")){
+            return 1;
+        }
+        else{
+            return -1;
+        }
+    }
+    public int getGradoNum() {
+        System.out.println("GRADO NUM DEBE SALIR:"+Grado);
+       if(Grado.equals("Primero")){
+            return 0;
+        }
+        if(Grado.equals("Segundo")){
+            return 1;
+        }
+        if(Grado.equals("Tercero")){
+            return 2;
+        }
+        if(Grado.equals("Cuarto")){
+            return 3;
+        }
+        if(Grado.equals("Quinto")){
+            return 4;
+        }
+        if(Grado.equals("Sexto")){
+            return 5;
+        }
+        else{
+            return -1;
+        }
+    }
 }

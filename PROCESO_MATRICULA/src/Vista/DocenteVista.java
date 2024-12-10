@@ -52,6 +52,8 @@ public class DocenteVista extends javax.swing.JInternalFrame {
 
         txtNombre.setBorder(javax.swing.BorderFactory.createTitledBorder("nombre"));
 
+        btnGuardar.setBackground(new java.awt.Color(102, 153, 255));
+        btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
         btnGuardar.setText("guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,8 +61,12 @@ public class DocenteVista extends javax.swing.JInternalFrame {
             }
         });
 
+        btnEliminar.setBackground(new java.awt.Color(102, 153, 255));
+        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminar.setText("eliminar");
 
+        btnBuscar.setBackground(new java.awt.Color(102, 153, 255));
+        btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscar.setText("buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,6 +91,8 @@ public class DocenteVista extends javax.swing.JInternalFrame {
 
         txtCodigo.setBorder(javax.swing.BorderFactory.createTitledBorder("codigo"));
 
+        btnOrdenar.setBackground(new java.awt.Color(102, 153, 255));
+        btnOrdenar.setForeground(new java.awt.Color(255, 255, 255));
         btnOrdenar.setText("ordenar");
 
         cbxCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Matematicas", "Comunicacion", "Ingles", "EdFisica", "Quimica", "Informatica", " " }));
@@ -95,18 +103,17 @@ public class DocenteVista extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btnBuscar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnEliminar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                        .addComponent(btnGuardar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtCodigo, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtApellido, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnOrdenar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(cbxCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtApellido)
+                    .addComponent(btnOrdenar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtNombre)
+                    .addComponent(txtCodigo)
+                    .addComponent(cbxCurso, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
         );

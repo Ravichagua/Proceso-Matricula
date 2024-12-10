@@ -21,10 +21,11 @@ public class Horario implements Serializable{
        this.curso =registro[1].toString();
        this.profesor =registro[2].toString();
        this.salonId=registro[3].toString();
+       this.grado=registro[4].toString();
    }
     
     public Object[] getRegistro(){
-      Object[] fila={horaInicio,getHoraFinal(),curso,profesor,salonId};
+      Object[] fila={horaInicio,getHoraFinal(),getCurso(),profesor,salonId};
        return fila;
    }
     
@@ -39,11 +40,11 @@ public class Horario implements Serializable{
 
     
 
-    public String getCursoId() {
-        return curso;
+    public String getCurso() {
+        return curso+" ("+getGrado()+")";
     }
 
-    public void setCursoId(String cursoId) {
+    public void setCurso(String cursoId) {
         this.curso = cursoId;
     }
 
@@ -75,5 +76,13 @@ public class Horario implements Serializable{
 
     public void setHoraFinal(String horaFinal) {
         this.horaFinal = horaFinal;
+    }
+
+    public String getGrado() {
+        return grado;
+    }
+
+    public void setGrado(String grado) {
+        this.grado = grado;
     }
 }

@@ -59,12 +59,7 @@ public class ControladorEstudiante implements ActionListener{
                vista.txtNombre.setText(estu.getNombre());
                vista.spnEdad.setValue(estu.getEdad());
                vista.txtApellido.setText(estu.getApellido());
-               switch(estu.getGrado()){
-                   case "INICIAL": vista.cbxGrado.setSelectedIndex(0); break;
-                   case "PRIMARIA": vista.cbxGrado.setSelectedIndex(1); break;
-                   case "SECUNDARIA": vista.cbxGrado.setSelectedIndex(2); break;
-               }
-
+               vista.cbxGrado.setSelectedIndex(estu.getGradoNumero());
                vista.btnEliminar.setEnabled(true);
            }
        }

@@ -35,7 +35,6 @@ public class MatriculaVista extends javax.swing.JInternalFrame {
         btnGuardar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         txtFecha = new javax.swing.JTextField();
-        btnOrdenar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -60,9 +59,11 @@ public class MatriculaVista extends javax.swing.JInternalFrame {
         cbxGrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Primero", "Segundo", "Tercero", "Cuarto", "Quinto", "Sexto" }));
         cbxGrado.setBorder(javax.swing.BorderFactory.createTitledBorder("Grado"));
 
-        cbxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MATRICULADO", "EN PROCESO", "TODAVIA" }));
+        cbxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MATRICULADO", "EN PROCESO" }));
         cbxEstado.setBorder(javax.swing.BorderFactory.createTitledBorder("Estado"));
 
+        btnGuardar.setBackground(new java.awt.Color(102, 153, 255));
+        btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,17 +71,14 @@ public class MatriculaVista extends javax.swing.JInternalFrame {
             }
         });
 
+        btnEliminar.setBackground(new java.awt.Color(102, 153, 255));
+        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminar.setText("Eliminar");
 
         txtFecha.setBorder(javax.swing.BorderFactory.createTitledBorder("Fecha"));
 
-        btnOrdenar.setText("Ordenar");
-        btnOrdenar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOrdenarActionPerformed(evt);
-            }
-        });
-
+        btnBuscar.setBackground(new java.awt.Color(102, 153, 255));
+        btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,18 +92,17 @@ public class MatriculaVista extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtNombre)
-                    .addComponent(txtDni)
-                    .addComponent(cbxGrado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cbxEstado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtFecha, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnOrdenar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtDni, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombre)
+                    .addComponent(cbxGrado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
         );
         layout.setVerticalGroup(
@@ -123,15 +120,12 @@ public class MatriculaVista extends javax.swing.JInternalFrame {
                         .addComponent(cbxEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnGuardar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnOrdenar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnBuscar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEliminar)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(btnEliminar))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 526, Short.MAX_VALUE))
                 .addGap(41, 41, 41))
         );
@@ -142,10 +136,6 @@ public class MatriculaVista extends javax.swing.JInternalFrame {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGuardarActionPerformed
-
-    private void btnOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnOrdenarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
@@ -190,7 +180,6 @@ public class MatriculaVista extends javax.swing.JInternalFrame {
     public javax.swing.JButton btnBuscar;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnGuardar;
-    public javax.swing.JButton btnOrdenar;
     public javax.swing.JComboBox<String> cbxEstado;
     public javax.swing.JComboBox<String> cbxGrado;
     public javax.swing.JScrollPane jScrollPane1;

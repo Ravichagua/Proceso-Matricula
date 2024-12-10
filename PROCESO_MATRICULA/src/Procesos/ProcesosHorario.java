@@ -7,7 +7,7 @@ public class ProcesosHorario {
     public static void MostrarDatosNodo(NodoHorario actual,HorarioVista f){
         f.txtHoraInicio.setText(actual.getElemento().getHoraInicio());
         f.cbxCurso.removeAllItems();
-        f.cbxCurso.addItem(actual.getElemento().getCursoId());
+        f.cbxCurso.addItem(actual.getElemento().getCurso());
         
         f.txtSalon.setText(actual.getElemento().getSalonId());
     }
@@ -17,6 +17,7 @@ public class ProcesosHorario {
         f.txtHoraInicio.setText("");
         f.txtSalon.setText("");
         f.cbxCurso.setSelectedIndex(0);
+        f.cbxGrado.setSelectedIndex(0);
    }
    
     public static void LimpiarTabla(DefaultTableModel modtabla){

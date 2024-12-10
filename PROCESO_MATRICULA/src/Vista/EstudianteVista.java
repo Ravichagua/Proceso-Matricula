@@ -22,7 +22,7 @@ public class EstudianteVista extends javax.swing.JInternalFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         //setLocationRelativeTo(null);
         //setLayout(null);
-        spnEdad.setValue(10);
+        spnEdad.setValue(6);
         
         
         
@@ -56,10 +56,16 @@ public class EstudianteVista extends javax.swing.JInternalFrame {
 
         txtNombre.setBorder(javax.swing.BorderFactory.createTitledBorder("nombre"));
 
+        btnGuardar.setBackground(new java.awt.Color(102, 153, 255));
+        btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
         btnGuardar.setText("Guardar");
 
+        btnEliminar.setBackground(new java.awt.Color(102, 153, 255));
+        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminar.setText("Eliminar");
 
+        btnBuscar.setBackground(new java.awt.Color(102, 153, 255));
+        btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,7 +90,9 @@ public class EstudianteVista extends javax.swing.JInternalFrame {
 
         spnEdad.setBorder(javax.swing.BorderFactory.createTitledBorder("edad"));
 
-        btnOrdenar.setText("Ordenar1");
+        btnOrdenar.setBackground(new java.awt.Color(102, 153, 255));
+        btnOrdenar.setForeground(new java.awt.Color(255, 255, 255));
+        btnOrdenar.setText("Ordenar Nom");
         btnOrdenar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOrdenarActionPerformed(evt);
@@ -101,7 +109,9 @@ public class EstudianteVista extends javax.swing.JInternalFrame {
 
         txtDni.setBorder(javax.swing.BorderFactory.createTitledBorder("dni"));
 
-        btnOrdenar2.setText("Ordenar2");
+        btnOrdenar2.setBackground(new java.awt.Color(102, 153, 255));
+        btnOrdenar2.setForeground(new java.awt.Color(255, 255, 255));
+        btnOrdenar2.setText("Ordenar Edad");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,18 +119,18 @@ public class EstudianteVista extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnOrdenar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnEliminar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnGuardar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(spnEdad, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cbxGrado, javax.swing.GroupLayout.Alignment.LEADING, 0, 121, Short.MAX_VALUE)
-                    .addComponent(txtApellido, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDni, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnOrdenar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnBuscar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnOrdenar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(spnEdad)
+                    .addComponent(cbxGrado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnOrdenar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtDni, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombre)
+                    .addComponent(txtApellido))
+                .addGap(38, 38, 38)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );

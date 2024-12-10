@@ -25,14 +25,16 @@ public class ProcesosMatricula {
     public static Matricula LeerMatricula(MatriculaVista fd){
         
         
-        Matricula ar =  new Matricula();
-        ar.setDni(fd.txtDni.getText());
-        ar.setEstudianteNombres(fd.txtNombre.getText());
-        ar.setGrado(fd.cbxGrado.getSelectedItem().toString());
-        ar.setEstado(fd.cbxEstado.getSelectedItem().toString());
-        ar.setFechaMatricula(StringToDate(fd.txtFecha.getText()));
+        Matricula matricula =  new Matricula();
 
-        return ar;
+        matricula.setDni(fd.txtDni.getText());
+        matricula.setEstudianteNombres(fd.txtNombre.getText());
+        matricula.setGrado(fd.cbxGrado.getSelectedItem().toString());
+
+        matricula.setEstado(fd.cbxEstado.getSelectedItem().toString());
+        matricula.setFechaMatricula(StringToDate(fd.txtFecha.getText()));
+
+        return matricula;
     }//fin leer
     
     public static void LimpiarEntradas(MatriculaVista fd){
@@ -55,7 +57,8 @@ public class ProcesosMatricula {
         } catch (ParseException e) {
             // Manejar el error si el formato no coincide
             Procesos.Mensajes.Mostrar("Ingrese una fecha correcta");
-            throw new RuntimeException("Error al parsear la fecha: " + CadenaFecha, e);
+            return Default;
+            //throw new RuntimeException("Error al parsear la fecha: " + CadenaFecha, e);
         }
         //return Default;
     }
