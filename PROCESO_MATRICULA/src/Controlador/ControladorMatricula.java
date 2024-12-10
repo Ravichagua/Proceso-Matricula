@@ -30,9 +30,6 @@ public class ControladorMatricula implements ActionListener {
         
        vista.setTitle("Registro de operarios usando pilas");
        
-
-        
-        
         vista.setVisible(true);
     }
     
@@ -40,7 +37,7 @@ public class ControladorMatricula implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==vista.btnGuardar){
             System.out.println("awdaw");
-            pila.Apilar(ProcesosMatricula.LeerDocente(vista));
+            pila.Apilar(ProcesosMatricula.LeerMatricula(vista));
             PersistenciaMatricula.Guardar(pila);
               
             ProcesosMatricula.LimpiarEntradas(vista);
@@ -49,7 +46,7 @@ public class ControladorMatricula implements ActionListener {
             
         }
         if(e.getSource()==vista.btnBuscar){
-            //int numeroPilra =pila.BuscarOperario(vista.txtDni.getText());
+
             System.out.println("awdaw");
             int numeroPila =pila.BuscarOperario(Mensajes.LeerTexto("Ingrese el numero de Dni"));
             
@@ -64,14 +61,6 @@ public class ControladorMatricula implements ActionListener {
         }
         if(e.getSource()==vista.btnOrdenar){
             
-            
-            //Pila copiapila=pila;
-            
-//            Pila PilaOrdenada=Ordenamiento.Insercion.PilaPorInsercionFecha(Pila.copiarPila(pila.pila));
-//            
-//            ProcesosMatricula.MostrarMatricula(vista,PilaOrdenada);
-//            
-//            System.out.println("SE HA ORDENADO");
         }
 
     }

@@ -27,7 +27,7 @@ public class ProcesosEstudiante {
        EV.txtDni.setText("");;
    }
    
-   public static void MostrarEst(EstudianteVista EV,ListaEnlazada lista){
+   public static void MostrarEstudiante(EstudianteVista EV,ListaEnlazada lista){
        String titulos[]={"dni","nombre","apellido","edad","grado"}; 
        DefaultTableModel mt = new DefaultTableModel(null,titulos);
        EV.tblDatos.setModel(mt);

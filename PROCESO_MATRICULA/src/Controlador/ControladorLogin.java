@@ -6,7 +6,6 @@ import Vista.LoginVista;
 import Vista.MenuPrincipalVista;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 
 public class ControladorLogin implements ActionListener {

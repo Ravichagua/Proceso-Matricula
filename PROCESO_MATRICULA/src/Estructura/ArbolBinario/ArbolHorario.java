@@ -13,9 +13,7 @@ public class ArbolHorario implements Serializable {
         Raiz=null;
     }
     
-    
-    
-    
+
     //metodo que agrega nodos al arbol
     public NodoHorario AgregarHorario(NodoHorario nodo,Horario elem){
 
@@ -39,7 +37,6 @@ public class ArbolHorario implements Serializable {
     }
     //metodo que muestra los datos enOrden (Izq - raiz - der)
     public void MostrarEnOrden(NodoHorario nodo,DefaultTableModel modelo){
-        //String titulos[]={"HoraIni","curso","salonId"};
        
         if(nodo!=null){
             MostrarEnOrden(nodo.getIzq(),modelo);

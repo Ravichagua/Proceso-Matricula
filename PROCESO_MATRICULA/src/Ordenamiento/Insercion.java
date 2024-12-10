@@ -3,8 +3,7 @@ package Ordenamiento;
 import Estructura.ListaDoble.*;
 import Estructura.Pila.Pila;
 import Modelo.*;
-import java.util.Date;
-import java.util.Stack;
+
 public class Insercion {
     //algoritmo de ordenamiento por Inserción en listas doble
     public static ListaEnlazadaDoble ListaDoblePorNombre(ListaEnlazadaDoble lista){

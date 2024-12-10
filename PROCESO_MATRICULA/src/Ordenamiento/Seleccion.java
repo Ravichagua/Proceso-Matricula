@@ -20,6 +20,7 @@ public class Seleccion {
         }
         return a;
     }
+    //************************ELIMINAR ESTO**********************************
     public static ListaEnlazada PorEdad(ListaEnlazada a){
         //Ordenamiento burbuja
         boolean swapped;
@@ -30,16 +31,16 @@ public class Seleccion {
 
             while (actual != null && actual.sig != null) {
                 if (actual.est.getEdad() > actual.sig.est.getEdad()) {
-                    // Intercambiar los nodos completos
+                    // intercambiar los nodos completos
                     if (anterior == null) {
-                        // Si 'actual' es el primer nodo, movemos 'ini' al siguiente nodo
+                        // Si actual es el primer nodo, movemos ini al siguiente nodo
                         a.ini = actual.sig;
                     } else {
-                        // Enlazar el nodo anterior con el siguiente nodo
+                        // enlazar el nodo anterior con el siguiente nodo
                         anterior.sig = actual.sig;
                     }
 
-                    // Conectar el nodo actual con el siguiente del siguiente
+                    // conectar el nodo actual con el siguiente del siguiente
                     NodoEnlazado temp = actual.sig.sig;
                     actual.sig.sig = actual;
                     actual.sig = temp;
@@ -52,6 +53,6 @@ public class Seleccion {
         } while (swapped);
 
     return a;
-}
+}//************************ELIMINAR ESTO**********************************
     
 }

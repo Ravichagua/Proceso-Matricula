@@ -11,7 +11,6 @@ import java.util.Date;
 public class ProcesosMatricula {
     
     
-    //this is going to be deleted
     public static void MostrarMatricula(MatriculaVista fd,Pila pila){
        String titulos[]={"Dni","Nombres","Grado","Estado","Fecha"};
        DefaultTableModel mt  = new DefaultTableModel(null,titulos);
@@ -23,7 +22,7 @@ public class ProcesosMatricula {
        }
     }
     
-    public static Matricula LeerDocente(MatriculaVista fd){
+    public static Matricula LeerMatricula(MatriculaVista fd){
         
         
         Matricula ar =  new Matricula();
@@ -60,6 +59,7 @@ public class ProcesosMatricula {
         }
         //return Default;
     }
+    
     public static String DateToString(Date DateFecha){
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 
@@ -67,6 +67,7 @@ public class ProcesosMatricula {
         String FechaString = formatter.format(DateFecha);
         return FechaString;
     }
+    
     public static String FechaActual(){
         
         Date FechaActual=new Date();

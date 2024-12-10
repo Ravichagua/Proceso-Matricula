@@ -10,7 +10,7 @@ public class NodoHorario implements Serializable{
         this.elemento=elem;
         Izq=Der=null;
     }
-    //getter y settter
+
     
     public Horario getElemento() {
         return elemento;
@@ -33,4 +33,4 @@ public class NodoHorario implements Serializable{
     }
     
     
-}//fin de la clase
+}

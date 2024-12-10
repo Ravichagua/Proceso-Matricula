@@ -15,8 +15,6 @@ public class ControladorHorario implements ActionListener {
     HorarioVista vista;
     ArbolHorario arbol;
      
-
-     
     int diaNumero;
 
     ArrayListDatos profesoresActuales= new ArrayListDatos();

@@ -3,7 +3,6 @@ package Estructura.ListaEnlazada;
 
 import Modelo.Estudiante;
 import java.io.Serializable;
-//import javax.swing.JTextArea;
 
 public class ListaEnlazada implements Serializable{
     public NodoEnlazado ini;

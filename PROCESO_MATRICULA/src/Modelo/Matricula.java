@@ -12,13 +12,6 @@ public class Matricula implements Serializable{
     private String Estado;
     private Date fechaMatricula;
 
-//    public Matricula(int id, int estudianteId, int cursoId, int salonId, String fechaMatricula) {
-//        this.dni = id;
-//        this.estudianteId = estudianteId;
-//        this.cursoId = cursoId;
-//        this.salonId = salonId;
-//        this.fechaMatricula = fechaMatricula;
-//    }
     public Object[] getRegistro(){
        
        Object[] fila={getDni(), getEstudianteNombres(), getGrado(), getEstado(),getFechaMatricula()};

@@ -8,8 +8,6 @@ import java.util.Date;
 
 public class Horario implements Serializable{
 
-    
-
     private String horaInicio;
     private String curso;
     private String salonId;

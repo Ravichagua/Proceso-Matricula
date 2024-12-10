@@ -33,7 +33,7 @@ public class ControladorEstudiante implements ActionListener{
         ProcesosEstudiante.Presentacion(vista);        
         Lista =  new ListaEnlazada();
         Lista = PersistenciaEstudiante.RecuperarEstudiantes();
-        ProcesosEstudiante.MostrarEst(vista, Lista);
+        ProcesosEstudiante.MostrarEstudiante(vista, Lista);
 
         vista.btnEliminar.setEnabled(false);
     }
@@ -41,11 +41,10 @@ public class ControladorEstudiante implements ActionListener{
     public void actionPerformed(ActionEvent e) {
        if(e.getSource() == vista.btnGuardar){
            est = ProcesosEstudiante.LeerEstudiante(vista);
-           //Lista.Agregar(est);
            Lista.AgregarAlInicio(est);
            PersistenciaEstudiante.GuardarEstudiante(Lista);
            ProcesosEstudiante.LimpiarEntradas(vista);
-           ProcesosEstudiante.MostrarEst(vista, Lista); 
+           ProcesosEstudiante.MostrarEstudiante(vista, Lista); 
        }
        if(e.getSource() == vista.btnBuscar){
            String dnibus = Mensajes.LeerTexto("Ingrese dni a buscar");
@@ -76,21 +75,21 @@ public class ControladorEstudiante implements ActionListener{
                Lista.EliminarEstudiante(pos);
                PersistenciaEstudiante.GuardarEstudiante(Lista);
                ProcesosEstudiante.LimpiarEntradas(vista);
-               ProcesosEstudiante.MostrarEst(vista, Lista); 
+               ProcesosEstudiante.MostrarEstudiante(vista, Lista); 
            }
        }     
        if(e.getSource()== vista.btnOrdenar2){//chnged
            
             ListaEnlazada copia =Lista;
             Burbuja.PorEdad(copia);
-            ProcesosEstudiante.MostrarEst(vista,copia);
+            ProcesosEstudiante.MostrarEstudiante(vista,copia);
           
        }
        if(e.getSource()== vista.btnOrdenar){
            
             ListaEnlazada copia =Lista;
             Seleccion.PorNombres(copia);
-            ProcesosEstudiante.MostrarEst(vista,copia);
+            ProcesosEstudiante.MostrarEstudiante(vista,copia);
           
        }
     }
