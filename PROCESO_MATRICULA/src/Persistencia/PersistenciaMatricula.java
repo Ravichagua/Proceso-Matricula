@@ -34,5 +34,11 @@ public class PersistenciaMatricula {
            Mensajes.Mostrar("ERROR no se puede recuperar..."+ex);
        }
        return Lista;
-    } 
+    }
+    
+    
+    
+    
+    
+    
 }

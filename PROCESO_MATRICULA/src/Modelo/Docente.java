@@ -7,12 +7,12 @@ public class Docente implements Serializable {
     private int id;
     private String nombre;
     private String apellido;
-    private String asignatura;
+    private String Curso;
     private String codigo;
     
     public Object[] Registro(int num){
         
-        Object[] fila={num,nombre,apellido,asignatura,codigo};
+        Object[] fila={codigo,nombre,apellido,Curso};
         return fila;
     }
     
@@ -43,12 +43,12 @@ public class Docente implements Serializable {
         this.apellido = apellido;
     }
 
-    public String getAsignatura() {
-        return asignatura;
+    public String getCurso() {
+        return Curso;
     }
 
-    public void setAsignatura(String asignatura) {
-        this.asignatura = asignatura;
+    public void setCurso(String asignatura) {
+        this.Curso = asignatura;
     }
 
     public String getCodigo() {
@@ -58,4 +58,30 @@ public class Docente implements Serializable {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
+    
+    public int getCursoNumero() {
+        
+        if(Curso.equals("Matematicas")){
+            return 0;
+        }
+        if(Curso.equals("Comunicacion")){
+            return 1;
+        }
+        if(Curso.equals("Ingles")){
+            return 2;
+        }
+        if(Curso.equals("EdFisica")){
+            return 3;
+        }
+        if(Curso.equals("Quimica")){
+            return 4;
+        }
+        if(Curso.equals("Informatica")){
+            return 5;
+        }
+        else{
+            return -1;
+        }
+    }
+    
 }

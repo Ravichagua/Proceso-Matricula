@@ -58,7 +58,7 @@ public class ControladorDocente  implements ActionListener {
              vista.txtNombre.setText(encontrado.doc.getNombre());
              vista.txtApellido.setText(encontrado.doc.getApellido());
              
-             vista.txtAsignatura.setText(encontrado.doc.getAsignatura());
+             vista.cbxCurso.setSelectedIndex(encontrado.doc.getCursoNumero());
              vista.txtCodigo.setText(encontrado.doc.getCodigo());
 
              vista.btnEliminar.setEnabled(true);//boton eliminar activado

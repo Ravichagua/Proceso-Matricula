@@ -10,37 +10,48 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
 import Persistencia.*;
 public class ControladorHorario implements ActionListener {
-     HorarioVista vista;
-     ArbolHorario arbol;
-     DefaultTableModel modTabla;
+    DefaultTableModel modTabla;
+    HorarioVista vista;
+    ArbolHorario arbol;
      
-     public ControladorHorario(HorarioVista HV){
-         vista=HV;
-         vista.btnGuardar.addActionListener(this);
+     
+     
+    int diaNumero;
 
-         vista.btnBuscar.addActionListener(this);
-        
-         //vista.setLocationRelativeTo(null);
-         vista.setVisible(true);
-         
+    
+    
+    
+    public ControladorHorario(HorarioVista HV){
+       vista=HV;
+       vista.btnGuardar.addActionListener(this);
+       vista.btnBuscar.addActionListener(this);
+       vista.cbxDia.addActionListener(this);
+       vista.setVisible(true);
 
-         arbol = new ArbolHorario();
-         arbol = PersistenciaHorario.RecuperarDeArchivo();
-         modTabla = (DefaultTableModel)vista.tblDatos.getModel();
-         arbol.MostrarEnOrden(arbol.getRaiz(), modTabla);
-        
-     }
+       //***************************************************
+       diaNumero=ProcesosHorario.obtenerDiaNum(vista);
+       System.out.println(diaNumero);
+       //***************************************************
+
+       arbol = new ArbolHorario();
+       arbol = PersistenciaHorario.RecuperarDeArchivo(diaNumero);
+       modTabla = (DefaultTableModel)vista.tblDatos.getModel();
+       arbol.MostrarEnOrden(arbol.getRaiz(), modTabla);
+
+
+
+    }
      
      @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()== vista.btnGuardar){
             Object[] Registro={vista.txtHoraInicio.getText(),
-                               vista.txtCurso.getText(),
+                               vista.cbxCurso.getSelectedItem().toString(),
                                vista.txtSalon.getText()};
             Horario elem =  new Horario(Registro);
             
             arbol.setRaiz(arbol.AgregarHorario(arbol.getRaiz(),elem));
-            PersistenciaHorario.GuardarEnArchivo(arbol);
+            PersistenciaHorario.GuardarEnArchivo(arbol,diaNumero);
             ProcesosHorario.LimpiarTabla(modTabla);
             arbol.MostrarEnOrden(arbol.getRaiz(), modTabla);
             ProcesosHorario.LimpiarEntradas(vista);
@@ -57,6 +68,16 @@ public class ControladorHorario implements ActionListener {
                 JOptionPane.showMessageDialog(null,
                         dato+" no existe en el arbol..");
             else ProcesosHorario.MostrarDatosNodo(encontrado, vista);
+        }
+        if(e.getSource() == vista.cbxDia){
+            diaNumero=ProcesosHorario.obtenerDiaNum(vista);
+            System.out.println(diaNumero);
+            
+            arbol = PersistenciaHorario.RecuperarDeArchivo(diaNumero);
+            
+            ProcesosHorario.LimpiarTabla(modTabla);
+            arbol.MostrarEnOrden(arbol.getRaiz(), modTabla);
+            ProcesosHorario.LimpiarEntradas(vista);
         }
     }
 }
